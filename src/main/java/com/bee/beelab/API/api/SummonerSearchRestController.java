@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/summoner")
+@RequestMapping("/summoner")
 public class SummonerSearchRestController {
 
 	private final SummonerSearchServiceImpl apiServiceimpl;

@@ -19,5 +19,7 @@ spring:
     suffix: .html
     mode: HTML
 
+riot:
+  api_key: RGAPI-93c0a976-0a4a-4ca9-b690-2c0b4d99288c
 
 

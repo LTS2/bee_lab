@@ -2,12 +2,16 @@
 
 <!--headerFragment 선언-->
 <header th:fragment="headerFragment" class="">
-	헤더 입니다.
+
+	<!-- 전적 검색 폼 -->
+	<div class="search-container">
+		<form id="searchForm">
+			<input type="text" id="summonerName" placeholder="소환사명 입력"/>
+			<input type="submit" value="검색"/>
+		</form>
+	</div>
 
 	<img src="/images/bee.png">
 
-	<div class="head-test">
-		여기가 head-test 입니다.
-	</div>
 </header>
 </html>
