@@ -1,17 +1,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <!--headerFragment 선언-->
-<header th:fragment="headerFragment" class="container">
+<header th:fragment="headerFragment" class="header-container">
 
 	<a href="/">
-		<div class="img-container">
+		<div class="header-img-container">
 			<img src="/images/bee.png" class="header-logo">
 		</div>
 	</a>
-	<div class="second-container">
+	<div class="header-second-container">
 		<!-- 전적 검색 폼 -->
-		<div class="search-container">
-			<form id="searchForm">
+		<div class="header-search-container">
+			<form id="header-search-form">
 				<select>
 					<option value="korea">Korea</option>
 					<option value="north-america">North America</option>
@@ -30,15 +30,15 @@
 					<option value="vietnam">Vietnam</option>
 					<option value="thailand">Thailand</option>
 				</select>
-				<input type="text" id="summonerName" placeholder="소환사명 입력" class="search-bar" />
-				<input type="submit" value="검색" class="click-bar" />
+				<input type="text" id="summonerName" placeholder="소환사명 입력" class="header-search-bar" />
+				<input type="submit" value="검색" class="header-click-bar" />
 			</form>
 		</div>
 
 		<!-- 네비게이터 폼 -->
-		<div class="navigator-container">
-			<div class="navigator">
-				<ul class="nav">
+		<div class="header-navigator-container">
+			<div class="header-navigator">
+				<ul class="header-nav">
 					<li class="">
 						<a href="/">홈</a>
 					</li>

@@ -1,6 +1,6 @@
 package com.bee.beelab.API.api;
 
-import com.bee.beelab.API.service.SummonerSearchServiceImpl;
+import com.bee.beelab.API.service.SearchSummonerServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,20 +14,20 @@ import java.util.HashMap;
 @Slf4j
 @RestController
 @RequestMapping("/summoner")
-public class SummonerSearchRestController {
+public class SearchSummonerRestController {
 
-	private final SummonerSearchServiceImpl apiServiceimpl;
+	private final SearchSummonerServiceImpl searchSummonerServiceImpl;
 
 
-	public SummonerSearchRestController(SummonerSearchServiceImpl apiServiceimpl) {
-		this.apiServiceimpl = apiServiceimpl;
+	public SearchSummonerRestController(SearchSummonerServiceImpl searchSummonerServiceImpl) {
+		this.searchSummonerServiceImpl = searchSummonerServiceImpl;
 	}
 
 	@GetMapping("/{summonerName}")
 	public ResponseEntity<HashMap<String, String>> getSummonerInfo(@PathVariable("summonerName") String summonerName){
-	    log.info(">>>>> SummonerController.String.executed()");
+	    log.info(">>>>> SearchSummonerRestController.getSummonerInfo.executed()");
 
-		HashMap<String, String> summonerInfo = apiServiceimpl.searchSummoner(summonerName);
+		HashMap<String, String> summonerInfo = searchSummonerServiceImpl.searchSummoner(summonerName);
 	    return ResponseEntity.ok(summonerInfo);
 	}
 }

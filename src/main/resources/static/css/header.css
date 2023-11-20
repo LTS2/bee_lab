@@ -29,7 +29,7 @@ ul li {
 /* 아래부터 클래스 */
 
 /* header 태그 컨테이너 */
-.container {
+.header-container {
 	display: flex;
 	justify-content: center;
 	background-color: #5383e8;
@@ -41,16 +41,16 @@ ul li {
 }
 
 /* header 바로 밑에 있는 컨테이너 */
-.second-container {
+.header-second-container {
 	display: flex;
 	flex-direction: column;
 }
 
-.search-container {
+.header-search-container {
 	margin-top: 10px;
 }
 
-.search-bar {
+.header-search-bar {
 	width: 840px;
 	height: 32px;
 	padding-left: 50px;
@@ -58,14 +58,14 @@ ul li {
 	border: 1px solid #fff;
 }
 
-.click-bar {
+.header-click-bar {
 	width: 60px;
 	height: 30px;
 	border-radius: 12px;
 	border: 1px solid #fff;
 }
 
-.nav {
+.header-nav {
 	display: flex;
 	gap: 30px;
 }
