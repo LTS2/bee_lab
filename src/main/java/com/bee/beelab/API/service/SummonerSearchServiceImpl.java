@@ -1,6 +1,7 @@
 package com.bee.beelab.API.service;
 
 import com.bee.beelab.API.model.SummonerSearchDTO;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -9,12 +10,14 @@ import java.util.HashMap;
 @Service
 public class SummonerSearchServiceImpl implements SummonerSearchService {
 
-	private static final String RIOT_API_KEY = "RGAPI-373c643a-9362-47ea-a5c6-da5f410a7633";
-	private static final String SUMMONER_NAME = "o민주몬o"; // 찾고자 하는 소환사 이름
+	@Value("${riot.api_key}")
+	private String RIOT_API_KEY;
 
+	/**
+	 * 소환사 검색 기능 */
 	@Override
 	public HashMap<String, String> searchSummoner(String summonerName) {
-		String url = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + SUMMONER_NAME + "?api_key=RGAPI-373c643a-9362-47ea-a5c6-da5f410a7633";
+		String url = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + summonerName + "?api_key=" + RIOT_API_KEY;
 
 		RestTemplate restTemplate = new RestTemplate();
 
