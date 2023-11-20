@@ -18,8 +18,14 @@ spring:
     check-template-location: true
     suffix: .html
     mode: HTML
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true
 
 riot:
-  api_key: RGAPI-93c0a976-0a4a-4ca9-b690-2c0b4d99288c
+  api_key: RGAPI-5d7bd021-2ad0-4e04-b900-a4d3a07e9069
 
 
