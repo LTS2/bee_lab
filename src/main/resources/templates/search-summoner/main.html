@@ -29,11 +29,11 @@
                 <div class="main-dropdown-menu" id="main-nation-dropdown">
                     <!--  Korea   -->
                     <button type="button" class="main-dropdown-nation main-dropdown-nation-korea" value="대한민국">
-                        대한민국
+                        Korea
                     </button>
                     <!--  Japan   -->
                     <button type="button" class="main-dropdown-nation main-dropdown-nation-japan" value="일본">
-                        일본
+                        Japan
                     </button>
                 </div>
             </div>
@@ -54,6 +54,19 @@
     document.addEventListener('DOMContentLoaded', () => {
         const nationToggle = document.getElementById('main-nation-toggle');
         const nationDropdown = document.getElementById('main-nation-dropdown');
+        const nationButton = document.querySelector('.main-summoner-nation');
+
+        // 사용자의 브라우저 언어 가져오기
+        const userLanguage = navigator.language || navigator.userLanguage;
+
+        // 국가 버튼에 언어 설정
+        if (userLanguage.startsWith('ko')) {
+            nationButton.value = 'Korea';
+        } if (userLanguage.startsWith("ja")) {
+            nationButton.value = 'Japan';
+        } if (userLanguage.startsWith("en")){
+            nationButton.value = 'America';
+        }
 
         nationToggle.addEventListener('click', () => {
             if (nationDropdown.style.display === 'none' || nationDropdown.style.display === '') {
@@ -63,7 +76,6 @@
             }
         });
 
-        // 선택한 국가에 대한 추가 작업을 수행할 수 있습니다.
     });
 </script>
 </body>

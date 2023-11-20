@@ -1,5 +1,4 @@
 $(()=> {
-
 	// 전적 검색 js
 	$('#main-search-form').submit(function (e){
 		e.preventDefault();
