@@ -8,32 +8,62 @@
     <meta name="viewport"
           content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
 
-    <!-- 부트스트랩 CSS -->
     <link rel="stylesheet" th:href="@{/css/main.css}">
 
     <!-- content script -->
     <th:block th:replace="~{fragments/config::configFragment}"></th:block>
     <script th:src="@{/js/main.js}"></script>
-</head>
 
-<!--	<th:block layout:fragment="css"></th:block>-->
-<!-- content script -->
-<!--	<th:block layout:fragment="script"></th:block>-->
+</head>
 
 <body>
 
+    <!-- 전적 검색 컨테이너 -->
 
-
-    <!-- 전적 검색 폼 -->
-    <form id="searchForm">
-        <input type="text" id="summonerName" placeholder="소환사명 입력"/>
-        <input type="submit" value="검색"/>
-    </form>
+    <!-- 2023.11.20 전적 검색 폼 시작 -->
+    <div class="main-search-container">
+        Toy.GG
+        <form id="main-search-form" class="main-search-form">
+            <div class="main-dropdown-container">
+                <input type="button" class="main-summoner-nation" value="국가" id="main-nation-toggle">
+                <div class="main-dropdown-menu" id="main-nation-dropdown">
+                    <!--  Korea   -->
+                    <button type="button" class="main-dropdown-nation main-dropdown-nation-korea" value="대한민국">
+                        대한민국
+                    </button>
+                    <!--  Japan   -->
+                    <button type="button" class="main-dropdown-nation main-dropdown-nation-japan" value="일본">
+                        일본
+                    </button>
+                </div>
+            </div>
+            <input type="text" id="main-summoner-name" placeholder="소환사명 입력" class="main-summoner-name">
+            <input type="submit" value="검색" class="main-search-button">
+        </form>
+    </div>
+    <!-- 2023.11.20 전적 검색 폼 끝 -->
 
 
 </th:block>
 
 
 <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const nationToggle = document.getElementById('main-nation-toggle');
+        const nationDropdown = document.getElementById('main-nation-dropdown');
+
+        nationToggle.addEventListener('click', () => {
+            if (nationDropdown.style.display === 'none' || nationDropdown.style.display === '') {
+                nationDropdown.style.display = 'block';
+            } else {
+                nationDropdown.style.display = 'none';
+            }
+        });
+
+        // 선택한 국가에 대한 추가 작업을 수행할 수 있습니다.
+    });
+</script>
 </body>
 </html>
