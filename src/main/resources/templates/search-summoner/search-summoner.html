@@ -4,7 +4,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8"/>
-    <title>[[${summoner.name}]] - 토이지지 롤 전적검색</title>
+    <title>[[${summonerV4.name}]] - 토이지지 롤 전적검색</title>
     <meta name="viewport"
           content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
     <!-- content script -->
@@ -25,13 +25,13 @@
 
 <th:block layout:fragment="content">
 
-    <div th:text="${'소환사 accountId : ' + summoner.get('accountId')}"></div>
-    <div th:text="${'소환사 profileIconId : ' + summoner.get('profileIconId')}"></div>
-    <div th:text="${'소환사 revisionDate : ' + summoner.get('revisionDate')}"></div>
-    <div th:text="${'소환사 name : ' + summoner.get('name')}"></div>
-    <div th:text="${'소환사 id : ' + summoner.get('id')}"></div>
-    <div th:text="${'소환사 puuid : ' + summoner.get('puuid')}"></div>
-    <div th:text="${'소환사 summonerLevel : ' + summoner.get('summonerLevel')}"></div>
+    <div th:text="${'소환사 계정 아이디 값 / accountId : ' + summonerV4.get('accountId')}"></div>
+    <div th:text="${'아이콘 아이디 / profileIconId : ' + summonerV4.get('profileIconId')}"></div>
+    <div th:text="${'갱신 날짜 / revisionDate : ' + summonerV4.get('revisionDate')}"></div>
+    <div th:text="${'소환사 이름 / name : ' + summonerV4.get('name')}"></div>
+    <div th:text="${'소환사 id 값 / id: ' + summonerV4.get('id')}"></div>
+    <div th:text="${'소환사 고유 식별번호 / puuid : ' + summonerV4.get('puuid')}"></div>
+    <div th:text="${'소환사 레벨 / summonerLevel : ' + summonerV4.get('summonerLevel')}"></div>
 
 </th:block>
 
