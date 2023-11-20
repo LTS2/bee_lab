@@ -26,6 +26,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    // liveReload 서버
+    implementation  'org.springframework.boot:spring-boot-devtools'
+
     // 타임리프 레이아웃 의존성
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 
