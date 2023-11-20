@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 
 @Service
-public class SummonerSearchServiceImpl implements SummonerSearchService {
+public class SearchSummonerServiceImpl implements SearchSummonerService {
 
 	@Value("${riot.api_key}")
 	private String RIOT_API_KEY;
