@@ -14,20 +14,24 @@
     <!-- content script -->
     <th:block th:replace="~{fragments/config::configFragment}"></th:block>
     <script th:src="@{/js/main.js}"></script>
-
 </head>
+
+<!--	<th:block layout:fragment="css"></th:block>-->
+<!-- content script -->
+<!--	<th:block layout:fragment="script"></th:block>-->
 
 <body>
 
-<div class="container mt-5">
-    <th:block layout:fragment="content">
-        <!-- 전적 검색 폼 -->
-        <form id="searchForm">
-            <input type="text" id="summonerName" placeholder="소환사명 입력"/>
-            <input type="submit" value="검색"/>
-        </form>
-    </th:block>
-</div>
+
+
+    <!-- 전적 검색 폼 -->
+    <form id="searchForm">
+        <input type="text" id="summonerName" placeholder="소환사명 입력"/>
+        <input type="submit" value="검색"/>
+    </form>
+
+
+</th:block>
 
 
 <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
