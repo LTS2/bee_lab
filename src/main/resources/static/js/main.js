@@ -1,6 +1,6 @@
 $(()=> {
 
-	// 전적 검색 js
+	// 메인 전적 검색 js
 	$('#main-search-form').submit(function (e){
 		e.preventDefault();
 		let summonerName = $('#main-summoner-name').val();

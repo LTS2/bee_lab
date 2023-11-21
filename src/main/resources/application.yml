@@ -26,6 +26,6 @@ spring:
         enabled: true
 
 riot:
-  api_key: RGAPI-5d7bd021-2ad0-4e04-b900-a4d3a07e9069
+  api_key: RGAPI-70377efa-b564-4bdb-8540-81efd3a070b8
 
 
