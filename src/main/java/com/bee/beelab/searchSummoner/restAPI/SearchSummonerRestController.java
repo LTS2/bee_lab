@@ -1,6 +1,8 @@
-package com.bee.beelab.API.api;
+package com.bee.beelab.searchSummoner.restAPI;
 
-import com.bee.beelab.API.service.SearchSummonerServiceImpl;
+import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
+import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
+import com.bee.beelab.searchSummoner.service.SearchSummonerServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +26,10 @@ public class SearchSummonerRestController {
 	}
 
 	@GetMapping("/{summonerName}")
-	public ResponseEntity<HashMap<String, String>> getSummonerInfo(@PathVariable("summonerName") String summonerName){
+	public ResponseEntity<SearchSummonerDTO> getSummonerInfo(@PathVariable("summonerName") String summonerName){
 	    log.info(">>>>> SearchSummonerRestController.getSummonerInfo.executed()");
 
-		HashMap<String, String> summonerInfo = searchSummonerServiceImpl.searchSummoner(summonerName);
+		SearchSummonerDTO summonerInfo = searchSummonerServiceImpl.searchSummoner(summonerName);
 	    return ResponseEntity.ok(summonerInfo);
 	}
 }
