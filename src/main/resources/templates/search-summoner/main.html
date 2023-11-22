@@ -13,69 +13,334 @@
     <!-- content script -->
     <th:block th:replace="~{fragments/config::configFragment}"></th:block>
     <script th:src="@{/js/main.js}"></script>
+<!--    <style>-->
 
+<!--        .search-container {-->
+<!--            text-align: center;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--            height: 87px;-->
+<!--        }-->
+
+<!--        .main-search-container {-->
+<!--            text-align: center;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 10px;-->
+<!--        }-->
+
+<!--        #main-search-form {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+
+<!--        .main-summoner-name {-->
+<!--            padding: 10px;-->
+<!--            font-size: 16px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            outline: none;-->
+<!--            width: 60vw;-->
+<!--            height: 40px; /* 추가된 높이 속성 */-->
+<!--        }-->
+
+<!--        .main-search-button {-->
+<!--            padding: 10px 20px;-->
+<!--            font-size: 16px;-->
+<!--            background-color: #4285f4;-->
+<!--            color: #fff;-->
+<!--            border: 1px solid #4285f4;-->
+<!--            border-radius: 0 20px 20px 0;-->
+<!--            cursor: pointer;-->
+<!--            height: 40px; /* 추가된 높이 속성 */-->
+<!--        }-->
+
+<!--        .main-summoner-nation {-->
+<!--            padding: 10px;-->
+<!--            font-size: 16px;-->
+<!--            background-color: #4285f4;-->
+<!--            color: #fff;-->
+<!--            border: 1px solid #4285f4;-->
+<!--            border-radius: 20px 0 0 20px;-->
+<!--            cursor: pointer;-->
+<!--            height: 40px;-->
+<!--            width: 100px;-->
+<!--        }-->
+
+<!--        .main-search-button:hover {-->
+<!--            background-color: #357ae8;-->
+<!--            border-color: #357ae8;-->
+<!--        }-->
+<!--        .main-dropdown-menu {-->
+<!--            display: none;-->
+<!--            position: absolute;-->
+<!--            background-color: #f9f9f9;-->
+<!--            min-width: 160px;-->
+<!--            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);-->
+<!--            z-index: 1;-->
+<!--        }-->
+
+<!--        .main-dropdown-nation {-->
+<!--            padding: 12px 16px;-->
+<!--            text-decoration: none;-->
+<!--            display: block;-->
+<!--        }-->
+
+<!--        .main-dropdown-nation:hover {-->
+<!--            background-color: #f1f1f1;-->
+<!--        }-->
+<!--        .main-duo-find-container-0{-->
+<!--            border: 1px solid red;-->
+<!--            display: flex;-->
+<!--            align-content: center;-->
+<!--        }-->
+
+<!--        .main-duo-find-container-1{-->
+<!--            border: 1px solid #000;-->
+<!--            width: 1100px;-->
+<!--            height: 469px;-->
+<!--            margin: 0 auto;-->
+<!--        }-->
+<!--        .main-duo-find-container-2{-->
+<!--            border: 1px solid #000000;-->
+<!--        }-->
+<!--        .main-duo-find-container-3 {-->
+<!--            display: flex;-->
+<!--            justify-content: center; /* 가운데 정렬 추가 */-->
+<!--            align-items: center; /* 상하 중앙 정렬 추가 */-->
+<!--        }-->
+
+<!--        .main-duo-find-all-box .main-duo-find-a-box {-->
+<!--            border: 1px solid blue;-->
+<!--            width: 360px;-->
+<!--            height: 354px;-->
+<!--            flex-shrink: 0; /* 크기 조정에 영향을 주지 않도록 설정 */-->
+<!--            transition: transform 0.5s ease; /* transform에 대한 애니메이션 효과 */-->
+<!--        }-->
+
+<!--        .main-duo-find-all-box{-->
+<!--            border: 1px solid darkorange;-->
+<!--            width: 968px;-->
+<!--            height: 372px;-->
+<!--            margin: 0 auto;-->
+<!--            display: flex;-->
+<!--            overflow: hidden;-->
+<!--            flex-direction: column;-->
+<!--            flex-wrap: wrap;-->
+<!--            justify-content: flex-end;-->
+<!--        }-->
+<!--        .main-duo-find-a-box{-->
+<!--            border: 1px solid rgb(91, 91, 91);-->
+<!--            flex-direction: column;-->
+<!--            width: 360px;-->
+<!--            min-height: 354px;-->
+<!--            border-radius: 10px;-->
+<!--            background-color: #393A3C;-->
+<!--            padding: 20px;-->
+<!--        }-->
+<!--        .main-duo-find-a-box + .main-duo-find-a-box {-->
+<!--            margin-left: 15px;-->
+<!--        }-->
+
+<!--        #scroll-left-btn{-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        #scroll-right-btn{-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .main-duo-find-a-box-title-tag{-->
+<!--            display: flex;-->
+<!--        }-->
+
+<!--        .main-duo-find-a-box-title-tag1{-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--        }-->
+
+<!--        .main-duo-find-rank{-->
+<!--            margin-left: 3px;-->
+<!--            color: #f9f9f9;-->
+<!--        }-->
+
+<!--        .main-duo-find-rank-img{-->
+<!--            border: 1px solid red;-->
+<!--            margin-left: 10px;-->
+<!--            width: 15px;-->
+<!--            color: #f9f9f9;-->
+<!--        }-->
+
+<!--        .main-duo-board-nickname{-->
+<!--            color: #f9f9f9;-->
+<!--        }-->
+
+<!--        .main-duo-find-line-img{-->
+<!--            border: 1px solid red;-->
+<!--            margin-left: 10px;-->
+<!--            width: 15px;-->
+<!--            color: #f9f9f9;-->
+<!--        }-->
+
+<!--        .main-duo-board-mic{-->
+<!--            margin-left: 10px;-->
+<!--        }-->
+
+<!--        .main-duo-find-title{-->
+<!--            color: #f9f9f9;-->
+<!--            margin-left: 10px;-->
+<!--        }-->
+
+<!--        .main-duo-find-a-box-champion-img-big-box{-->
+<!--            height: 26px;-->
+<!--            width: 100px;-->
+<!--            display: flex;-->
+<!--            margin-top: 75px;-->
+<!--        }-->
+
+<!--        .main-duo-find-a-box-champion-img-box{-->
+<!--            height: 24px;-->
+<!--            width: 30px;-->
+<!--        }-->
+
+<!--        .main-duo-find-a-box-champion-img-box + .main-duo-find-a-box-champion-img-box{-->
+<!--            margin-left: 3px;-->
+<!--        }-->
+
+<!--        .main-duo-find-a-box-champion-img {-->
+<!--            max-width: 100%; /* 최대 너비를 부모 요소에 맞게 조절 */-->
+<!--            max-height: 100%; /* 최대 높이를 부모 요소에 맞게 조절 */-->
+<!--        }-->
+
+
+<!--        .main-duo-find-registration-time{-->
+<!--            margin-left: 100px;-->
+<!--            color: #999999;-->
+<!--        }-->
+<!--        .main-duo-board-content{-->
+<!--            margin-top: 25px;-->
+<!--            height: 48px;-->
+<!--            color: #999999;-->
+<!--        }-->
+<!--        .main-line{-->
+<!--            width: calc(100% + 40px);-->
+<!--            height: 1px;-->
+<!--            margin-top: 16px;-->
+<!--            margin-left: -20px;-->
+<!--            background: rgba(91, 91, 91, 0.5);-->
+<!--        }-->
+
+
+
+
+<!--    </style>-->
 </head>
 
 <body>
 
-    <!-- 전적 검색 컨테이너 -->
+<!-- 전적 검색 컨테이너 -->
 
-    <!-- 2023.11.20 전적 검색 폼 시작 -->
-    <div class="main-search-container">
-        Toy.GG
-        <form id="main-search-form" class="main-search-form">
-            <div class="main-dropdown-container">
-                <input type="button" class="main-summoner-nation" value="국가" id="main-nation-toggle">
-                <div class="main-dropdown-menu" id="main-nation-dropdown">
-                    <!--  Korea   -->
-                    <button type="button" class="main-dropdown-nation main-dropdown-nation-korea" value="대한민국">
-                        Korea
-                    </button>
-                    <!--  Japan   -->
-                    <button type="button" class="main-dropdown-nation main-dropdown-nation-japan" value="일본">
-                        Japan
-                    </button>
+<!-- 2023.11.20 전적 검색 폼 시작 -->
+<div class="main-search-container">
+    Toy.GG
+    <form id="main-search-form" class="main-search-form">
+        <div class="main-dropdown-container">
+            <input type="button" class="main-summoner-nation" value="국가" id="main-nation-toggle">
+            <div class="main-dropdown-menu" id="main-nation-dropdown">
+                <!--  Korea   -->
+                <button type="button" class="main-dropdown-nation main-dropdown-nation-korea" value="대한민국">
+                    Korea
+                </button>
+                <!--  Japan   -->
+                <button type="button" class="main-dropdown-nation main-dropdown-nation-japan" value="일본">
+                    Japan
+                </button>
+            </div>
+        </div>
+        <input type="text" id="main-summoner-name" placeholder="소환사명 입력" class="main-summoner-name">
+        <input type="submit" value="검색" class="main-search-button">
+    </form>
+</div>
+<!-- 2023.11.20 전적 검색 폼 끝 -->
+
+<!--2023.11.21 듀오 구하기 폼 시작 -->
+<div class="main-duo-find-container-0">
+    <div class="main-duo-find-container-1">
+        <div class="main-duo-find-container-2">
+            <div class="main-duo-find-container-3">
+
+                <i id="scroll-left-btn" class="fa-solid fa-chevron-left fa-2xl"></i>
+
+                <div class="main-duo-find-all-box" id="duoBoardContainer">
+
+                    <a href="#">듀오 구하기(더보기)</a>
+
+                    <div th:each="post : ${posts}" class="main-duo-find-a-box">
+
+                        <div class="main-duo-find-a-box-title-tag">
+                            <i id="main-duo-find-profile" class="fa-solid fa-user"></i>
+                            <h3 class="main-duo-find-title" th:text="${post.title}"/>
+                        </div>
+                        <div class="main-duo-find-a-box-title-tag1">
+                            <p th:text="${post.nickName}" class="main-duo-board-nickname"/>
+                            <div class="main-duo-find-rank-img">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+                            <p th:text="${post.rank}" class="main-duo-find-rank"/>
+
+                            <div class="main-duo-find-line-img">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+
+                            <i th:if="${post.microphoneSelected}" id="main-duo-board-mic" class="fa-solid fa-microphone main-duo-board-mic"></i>
+                            <i th:unless="${post.microphoneSelected}" class="fa-solid fa-microphone-slash main-duo-board-mic"></i>
+                            <p class="main-duo-find-registration-time">10초전</p>
+
+                        </div>
+                        <p th:text="${post.content}" class="main-duo-board-content"/>
+
+                        <div class="main-duo-find-a-box-champion-img-big-box">
+
+                            <div class="main-duo-find-a-box-champion-img-box">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+
+                            <div class="main-duo-find-a-box-champion-img-box">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+
+                            <div class="main-duo-find-a-box-champion-img-box">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+                        </div>
+                        <div class="main-line"></div>
+
+                    </div>
+
                 </div>
+                <!--  main-duo-find-all-box end  -->
+                <i id="scroll-right-btn" class="fa-solid fa-chevron-right fa-2xl"></i>
             </div>
-            <input type="text" id="main-summoner-name" placeholder="소환사명 입력" class="main-summoner-name">
-            <input type="submit" value="검색" class="main-search-button">
-        </form>
-    </div>
-    <!-- 2023.11.20 전적 검색 폼 끝 -->
-
-    <div class="main-duo-find">
-        <div th:each="post : ${posts}" class="main-duo-board">
-            <div class="main-duo-board-user-profile">
-                <i class="fa-solid fa-user"></i>
-            </div>
-            <h3 th:text="${post.title}"/>
-
-            <div class="main-duo-board-summoner-info">
-                <p th:text="${post.nickName}" class="main-duo-board-nickname"/>
-                <p th:text="${post.rank}" class="main-duo-board-rank"/>
-                <i th:if="${post.microphoneSelected}" id="main-duo-board-mic" class="fa-solid fa-microphone"></i>
-                <i th:unless="${post.microphoneSelected}" class="fa-solid fa-microphone-slash"></i>
-            </div>
-            <p th:text="${post.content}" class="main-duo-board-content"/>
-            <hr class="main-hr1">
         </div>
     </div>
-
-
-
-
-
-
-    </th:block>
-
+</div>
+<!--2023.11.22 듀오 구하기 폼 끝 -->
 
 <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
 
-<script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
     document.addEventListener('DOMContentLoaded', () => {
         const nationToggle = document.getElementById('main-nation-toggle');
         const nationDropdown = document.getElementById('main-nation-dropdown');
         const nationButton = document.querySelector('.main-summoner-nation');
+        const moveLeftBtn = document.getElementById('scroll-left-btn');
+        const moveRightBtn = document.getElementById('scroll-right-btn');
+        const duoBoardContainer = document.getElementById('duoBoardContainer');
+
+        // 각 아이템의 너비
+        const boxWidth = 360;
 
         // 사용자의 브라우저 언어 가져오기
         const userLanguage = navigator.language || navigator.userLanguage;
@@ -97,7 +362,40 @@
             }
         });
 
+        // 이전에는 바로 값을 증가시켰다면, 이제는 requestAnimationFrame을 사용하여 부드러운 애니메이션 효과를 추가합니다.
+        let animationFrameId;
+
+        moveRightBtn.addEventListener('click', () => {
+            const targetScroll = duoBoardContainer.scrollLeft + boxWidth;
+            animateScroll(targetScroll);
+        });
+
+        moveLeftBtn.addEventListener('click', () => {
+            const targetScroll = duoBoardContainer.scrollLeft - boxWidth;
+            animateScroll(targetScroll);
+        });
+
+        function animateScroll(targetScroll) {
+            cancelAnimationFrame(animationFrameId);
+
+            function scrollStep() {
+                const currentScroll = duoBoardContainer.scrollLeft;
+                const scrollAmount = (targetScroll - currentScroll) / 10;
+
+                // 더하던 부분을 할당으로 수정
+                duoBoardContainer.scrollLeft += scrollAmount;
+
+                if (Math.abs(targetScroll - currentScroll) > 1) {
+                    animationFrameId = requestAnimationFrame(scrollStep);
+                }
+            }
+
+            scrollStep();
+        }
     });
+    /*]]>*/
 </script>
+
+
 </body>
 </html>

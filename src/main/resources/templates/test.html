@@ -40,13 +40,29 @@
 <body>
 
 <div class="main-duo-find">
-    <div th:each="post : ${posts}" class="main-duo-board">
-        <i class="fa-solid fa-microphone"></i>
-        <i class="fa-solid fa-microphone-slash"></i>
-        <h3 th:text="${post.title}"/>
-        <p th:text="${post.content}" class="main-duo-board-content"/>
-        <hr class="main-hr1">
+    <!--2023.11.21 듀오 구하기 폼 시작 -->
+    <div class="main-duo-find-container">
+        <i id="scroll-left-btn" class="fa-solid fa-chevron-left fa-2xl"></i>
+        <div class="main-duo-find" id="duoBoardContainer">
+            <div th:each="post : ${posts}" class="main-duo-board">
+                <div class="main-duo-board-user-profile">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <h3 th:text="${post.title}"/>
+
+                <div class="main-duo-board-summoner-info">
+                    <p th:text="${post.nickName}" class="main-duo-board-nickname"/>
+                    <p th:text="${post.rank}" class="main-duo-board-rank"/>
+                    <i th:if="${post.microphoneSelected}" id="main-duo-board-mic" class="fa-solid fa-microphone"></i>
+                    <i th:unless="${post.microphoneSelected}" class="fa-solid fa-microphone-slash"></i>
+                </div>
+                <p th:text="${post.content}" class="main-duo-board-content"/>
+                <hr class="main-hr1">
+            </div>
+        </div>
+        <i id="scroll-right-btn"  class="fa-solid fa-chevron-right fa-2xl"></i>
     </div>
+    <!--2023.11.22 듀오 구하기 폼 끝 -->
 </div>
 
 </body>

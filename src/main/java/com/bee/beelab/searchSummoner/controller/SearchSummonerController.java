@@ -1,7 +1,6 @@
 package com.bee.beelab.searchSummoner.controller;
 
 
-import com.bee.beelab.API.service.SearchSummonerServiceImpl;
 import com.bee.beelab.test.controller.TestController;
 import com.bee.beelab.test.entity.Post;
 
