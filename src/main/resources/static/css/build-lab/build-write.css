@@ -1,0 +1,21 @@
+#txtContent{
+    width: 1200px
+    /*margin: auto;*/
+}
+.build-container{
+    width: 100%;
+    margin-top: 100px;
+    /*border: 1px solid black;*/
+}
+.build-mini-container{
+    max-width: 1202px;
+    margin: auto;
+    /*border: 1px solid red;*/
+}
+.build-title{
+    font-size: 25px;
+    font-weight: 600;
+}
+#smart_editor2{
+    width: 1100px !important;
+}
