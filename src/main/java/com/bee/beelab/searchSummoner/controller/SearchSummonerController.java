@@ -1,8 +1,13 @@
-package com.bee.beelab.API.controller;
+package com.bee.beelab.searchSummoner.controller;
+
 
 import com.bee.beelab.API.service.SearchSummonerServiceImpl;
 import com.bee.beelab.test.controller.TestController;
 import com.bee.beelab.test.entity.Post;
+
+import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
+import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
+import com.bee.beelab.searchSummoner.service.SearchSummonerServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.HashMap;
 import java.util.List;
+
+import java.util.Set;
 
 /**
  * The type Search summoner controller.
@@ -60,11 +67,17 @@ public class SearchSummonerController {
 	public String searchSummoner(Model model, @PathVariable String summonerName){
 		log.info(">>>>> SearchSummonerController.searchSummoner.executed()");
 
-		HashMap<String, String> summonerV4 = searchSummonerServiceimpl.searchSummoner(summonerName);
+		SearchSummonerDTO summonerV4 = searchSummonerServiceimpl.searchSummoner(summonerName);
+		SearchSummonerRankedDTO leagueV4 = searchSummonerServiceimpl.searchSummonerRanked(summonerV4.getId());
+
+
 		model.addAttribute("summonerV4",  summonerV4);
+		model.addAttribute("leagueV4",  leagueV4);
 
 		return "search-summoner/search-summoner";
 	}
+
+
 
 
 }

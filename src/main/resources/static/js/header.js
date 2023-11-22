@@ -1,5 +1,8 @@
 $(()=> {
 	// 전적 검색 js
+
+
+	// 헤더 전적 검색 js
 	$('#header-search-form').submit(function (e){
 		e.preventDefault();
 		let summonerName = $('#header-summoner-name').val();

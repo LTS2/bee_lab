@@ -25,13 +25,21 @@
 
 <th:block layout:fragment="content">
 
-    <div th:text="${'소환사 계정 아이디 값 / accountId : ' + summonerV4.get('accountId')}"></div>
-    <div th:text="${'아이콘 아이디 / profileIconId : ' + summonerV4.get('profileIconId')}"></div>
-    <div th:text="${'갱신 날짜 / revisionDate : ' + summonerV4.get('revisionDate')}"></div>
-    <div th:text="${'소환사 이름 / name : ' + summonerV4.get('name')}"></div>
-    <div th:text="${'소환사 id 값 / id: ' + summonerV4.get('id')}"></div>
-    <div th:text="${'소환사 고유 식별번호 / puuid : ' + summonerV4.get('puuid')}"></div>
-    <div th:text="${'소환사 레벨 / summonerLevel : ' + summonerV4.get('summonerLevel')}"></div>
+    <div th:text="${'소환사 계정 아이디 값 / summonerLevel : ' + summonerV4.getAccountId()}"></div>
+    <div th:text="${'아이콘 아이디  / summonerLevel : ' + summonerV4.getProfileIconId()}"></div>
+    <div th:text="${'갱신 날짜 / summonerLevel : ' + summonerV4.getRevisionDate()}"></div>
+    <div th:text="${'소환사 이름  / summonerLevel : ' + summonerV4.getName()}"></div>
+    <div th:text="${'소환사 id 값 / summonerLevel : ' + summonerV4.getId()}"></div>
+    <div th:text="${'소환사 고유 식별번호 / summonerLevel : ' + summonerV4.getPuuid()}"></div>
+    <div th:text="${'소환사 레벨 / summonerLevel : ' + summonerV4.getSummonerLevel()}"></div>
+    <br>
+
+
+    <div th:text="${'leagueV4 첫 번째 / 티어 : ' + leagueV4.getTier() + ' ' +leagueV4.getRank() + ' ' + leagueV4.getLeaguePoints() + 'LP'}"></div>
+    <div th:text="${leagueV4.getWins() + '승'}"></div>
+    <div th:text="${leagueV4.getLosses() + '패'}"></div>
+    <div th:text="${'승률 : ' + (100.0 * leagueV4.getWins() / (leagueV4.getWins() + leagueV4.getLosses())) + '%'}"></div>
+
 
 </th:block>
 

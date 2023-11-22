@@ -1,4 +1,4 @@
-package com.bee.beelab.API.model;
+package com.bee.beelab.searchSummoner.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-public class SummonerSearchDTO {
+public class SearchSummonerDTO {
 
 	private String accountId; // 암호화된 계정 ID입니다. 최대 길이는 56자입니다.
 	private int profileIconId; // 소환사와 연결된 소환사 아이콘의 ID입니다.
