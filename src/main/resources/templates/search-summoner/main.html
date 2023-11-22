@@ -43,9 +43,30 @@
     </div>
     <!-- 2023.11.20 전적 검색 폼 끝 -->
 
+    <div class="main-duo-find">
+        <div th:each="post : ${posts}" class="main-duo-board">
+            <div class="main-duo-board-user-profile">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 th:text="${post.title}"/>
+
+            <div class="main-duo-board-summoner-info">
+                <p th:text="${post.nickName}" class="main-duo-board-nickname"/>
+                <p th:text="${post.rank}" class="main-duo-board-rank"/>
+                <i th:if="${post.microphoneSelected}" id="main-duo-board-mic" class="fa-solid fa-microphone"></i>
+                <i th:unless="${post.microphoneSelected}" class="fa-solid fa-microphone-slash"></i>
+            </div>
+            <p th:text="${post.content}" class="main-duo-board-content"/>
+            <hr class="main-hr1">
+        </div>
+    </div>
 
 
-</th:block>
+
+
+
+
+    </th:block>
 
 
 <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>

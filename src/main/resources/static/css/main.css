@@ -73,3 +73,49 @@
 .main-dropdown-nation:hover {
     background-color: #f1f1f1;
 }
+
+.main-duo-find {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.main-duo-board {
+    flex: 0 0 auto;
+    width: 300px;
+    min-width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    padding: 10px;
+    height: 300px;
+}
+.main-duo-board-content{
+    height: 100px;
+
+}
+
+.main-duo-board-summoner-info{
+    display: flex;
+    padding-bottom: 36px;
+    padding-top: 24px;
+}
+
+.main-duo-board-rank{
+    margin-left: 20px;
+}
+
+#main-duo-board-mic{
+    margin-left: 20px;
+}
+
+.main-duo-board-user-profile {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
