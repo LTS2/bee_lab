@@ -1,11 +1,7 @@
 package com.bee.beelab.searchSummoner.service;
 
-import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
-import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import com.bee.beelab.searchSummoner.model.dto.SearchSummonerDTO;
+import com.bee.beelab.searchSummoner.model.dto.SearchSummonerRankedDTO;
 
 public interface SearchSummonerService {
 

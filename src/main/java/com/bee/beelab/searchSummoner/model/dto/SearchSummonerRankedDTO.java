@@ -1,4 +1,4 @@
-package com.bee.beelab.searchSummoner.model.entity;
+package com.bee.beelab.searchSummoner.model.dto;
 
 import lombok.*;
 import org.springframework.stereotype.Component;

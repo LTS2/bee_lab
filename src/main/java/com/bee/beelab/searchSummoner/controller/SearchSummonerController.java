@@ -1,7 +1,7 @@
 package com.bee.beelab.searchSummoner.controller;
 
-import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
-import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
+import com.bee.beelab.searchSummoner.model.dto.SearchSummonerDTO;
+import com.bee.beelab.searchSummoner.model.dto.SearchSummonerRankedDTO;
 import com.bee.beelab.searchSummoner.service.SearchSummonerServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
 
 /**
  * The type Search summoner controller.

@@ -9,8 +9,7 @@
           content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
     <!-- content script -->
     <th:block th:replace="~{fragments/config::configFragment}"></th:block>
-
-
+    <link rel="stylesheet" th:href="@{/css/search-summoner/search-summoner.css}">
 </head>
 <!--	<th:block layout:fragment="css"></th:block>-->
 
@@ -25,6 +24,110 @@
 
 <th:block layout:fragment="content">
 
+    <!-- 2023.11.21 전적 검색 빅 컨테이너 시작 -->
+    <div class="search-big-container">
+        <!-- 2023.11.21 전적 검색 미들 컨테이너 시작 -->
+        <div class="search-middle-container">
+            <!-- 2023.11.21 유저 프로필 컨테이너 시작 -->
+            <div class="search-profile-container">
+
+                <div class="search-profile-wrap">
+                    <!-- 2023.11.21 소환사 프로필 왼쪽 컨테이너 시작 -->
+                    <div class="search-profile-left-container">
+                        <div class="search-profile-icon">
+<!--                            <img src="/images/search-summoner/profileIcon5489.png" alt="소환사 아이콘 사진">-->
+                            <img th:src="@{'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/' + ${summonerV4.getProfileIconId()} + '.png'}" alt="소환사 아이콘 사진">
+
+                        </div>
+                        <!-- 2023.11.22 소환사 레벨 시작-->
+                        <div class="search-profile-level">
+                            <p th:text="${'레벨: ' + summonerV4.getSummonerLevel()}" class="search-profile-level-text"></p>
+                        </div>
+                        <!-- 2023.11.22 소환사 레벨 끝 -->
+
+                    </div>
+                    <!-- 2023.11.21 소환사 프로필 왼쪽 컨테이너 끝 -->
+
+                    <!-- 2023.11.21 소환사 프로필 오른쪽 컨테이너 시작 -->
+                    <div class="search-profile-right-container">
+
+                        <!-- 2023.11.21 소환사 전시즌 정보칸 시작-->
+                        <div class="search-profile-right-ranked-wrap">
+                            <div class="search-profile-right-ranked">
+                                <p class="search-profile-ranked-box">
+                                    S2023 S1 Platinum 4
+                                </p>
+                                <p class="search-profile-ranked-box">
+                                    S11 Bronze
+                                </p>
+                                <p class="search-profile-ranked-box">
+                                    S11 Bronze
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 2023.11.21 소환사 전시즌 정보칸 끝-->
+
+                        <!-- 2023.11.22 소환사 이름 시작 -->
+                        <div class="search-profile-right-name-wrap">
+                            <div class="search-profile-right-name-box">
+                                <p th:text="${summonerV4.getName()}"class="search-profile-name-text"></p>
+                            </div>
+                            <button class="search-profile-right-bookmark">
+                                <img src="/images/search-summoner/icon-bookmark.svg" alt="">
+                            </button>
+                        </div>
+                        <!-- 2023.11.22 소환사 이름 끝 -->
+
+                        <!-- 2023.11.22 래더 랭킹 시작 -->
+                        <div class="search-profile-right-ranking-wrap">
+                            <div class="search-profile-ranking-box">
+                                <p class="search-ranking-text">
+                                    래더 랭킹 142,412위(상위 15.25%)
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 2023.11.22 래더 랭킹 끝 -->
+
+                        <!-- 2023.11.22 전적 갱신 버튼 시작 -->
+                        <div class="search-profile-right-division-wrap">
+                            <div class="search-profile-division-box">
+                                <button class="search-division">
+                                    전적 갱신
+                                </button>
+                            </div>
+                        </div>
+                        <!-- 2023.11.22 전적 갱신 버튼 끝 -->
+
+                        <!-- 2023.11.22 최근 업데이트 버튼 시작 -->
+                        <div class="search-profile-right-division-history-wrap">
+                            <div class="search-profile-division-history-box">
+                                <p class="division-history-text">
+                                    최근 업데이트: 18시간 전
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 2023.11.22 최근 업데이트 버튼 끝 -->
+
+
+                    </div>
+                    <!-- 2023.11.21 소환사 프로필 오른쪽 컨테이너 끝 -->
+                </div>
+
+            </div>
+            <!-- 2023.11.21 전적 검색 컨테이너 끝 -->
+
+            <!-- 2023.11.21 전적 정보 컨테이너 시작 -->
+            <div class="search-info-container">
+
+            </div>
+            <!-- 2023.11.21 전적 정보 컨테이너 끝 -->
+
+        </div>
+        <!-- 2023.11.21 전적 검색 미들 컨테이너 끝 -->
+
+    </div>
+    <!-- 2023.11.21 전적 검색 컨테이너 끝 -->
+
     <div th:text="${'소환사 계정 아이디 값 / summonerLevel : ' + summonerV4.getAccountId()}"></div>
     <div th:text="${'아이콘 아이디  / summonerLevel : ' + summonerV4.getProfileIconId()}"></div>
     <div th:text="${'갱신 날짜 / summonerLevel : ' + summonerV4.getRevisionDate()}"></div>
@@ -33,6 +136,7 @@
     <div th:text="${'소환사 고유 식별번호 / summonerLevel : ' + summonerV4.getPuuid()}"></div>
     <div th:text="${'소환사 레벨 / summonerLevel : ' + summonerV4.getSummonerLevel()}"></div>
     <br>
+
 
 
     <div th:text="${'leagueV4 첫 번째 / 티어 : ' + leagueV4.getTier() + ' ' +leagueV4.getRank() + ' ' + leagueV4.getLeaguePoints() + 'LP'}"></div>

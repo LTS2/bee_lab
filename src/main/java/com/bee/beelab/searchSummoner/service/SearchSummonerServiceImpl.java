@@ -1,12 +1,11 @@
 package com.bee.beelab.searchSummoner.service;
 
-import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
-import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
+import com.bee.beelab.searchSummoner.model.dto.SearchSummonerDTO;
+import com.bee.beelab.searchSummoner.model.dto.SearchSummonerRankedDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

@@ -1,0 +1,134 @@
+.search-big-container {
+	border: 1px solid #000;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.search-middle-container {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	border: 1px solid red;
+	min-width: 1080px;
+}
+
+.search-profile-container {
+	border: 1px solid #000;
+	padding: 10px 10px 16px 0;
+	height: 228px;
+	min-width: 1080px;
+}
+
+.search-profile-wrap {
+	display: flex;
+	height: 100%;
+}
+
+/* 소환사 정보 메인 랩 */
+.search-profile-wrap {
+	display: flex;
+	gap: 30px;
+}
+
+/* 소환사 정보 아이콘 컨테이너 */
+.search-profile-left-container {
+	border: 1px solid blue;
+	display: flex;
+	flex-direction: column;
+	padding-top: 32px;
+	align-items: center;
+}
+
+.search-profile-icon img {
+	border-radius: 12px;
+	width: 100px;
+	height: 100px;
+}
+
+/* 소환사 정보 이름 컨테이너 */
+.search-profile-right-container {
+	border: 1px solid #4029;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	flex-grow: 1;
+}
+
+/* 소환사 전시즌 렙 */
+.search-profile-right-ranked-wrap {
+	font-size: 11px;
+}
+
+.search-profile-right-ranked {
+	display: flex;
+	gap: 5px;
+}
+
+/* 소환사 전시즌 박스 */
+.search-profile-ranked-box {
+	border: 1px solid;
+	/* background-color: #ebeef1; */
+	color: #9aa4af;
+	padding: 0 4px;
+	line-height: 18px;
+	height: 18px;
+	border-radius: 2px;
+}
+
+/* 전적 정보 컨테이너 */
+.search-info-container {
+	border: 1px solid #000;
+	flex-grow: 1;
+}
+
+.search-profile-right-name-wrap {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+}
+/* 소환사 이름 텍스트 */
+.search-profile-name-text {
+	padding-top: 5px;
+	font-size: 24px;
+}
+
+/* 즐겨찾기 버튼 */
+.search-profile-right-bookmark {
+	display: flex;
+	border: 1px solid #dbe0e4;
+	width: 28px;
+	height: 28px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	background-color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* 전적 갱신 버튼 */
+.search-division {
+	border-radius: 4px;
+	background-color: #4171d6;
+	border: 1px solid #4171d6;
+	font-size: 14px;
+	color: #fff;
+	width: 80px;
+	height: 40px;
+	cursor: pointer;
+}
+
+.search-division:hover {
+	background-color: #2c5abe;
+}
+
+.search-profile-right-division-history-wrap {
+	width: 120px;
+}
+
+.division-history-text {
+	font-size: 12px;
+	color: #9aa4af;
+}
