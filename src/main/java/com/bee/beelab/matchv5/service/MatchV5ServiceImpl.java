@@ -2,7 +2,6 @@ package com.bee.beelab.matchv5.service;
 
 import com.bee.beelab.matchv5.model.dto.MatchDto;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -11,9 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @author : ejum
@@ -61,15 +58,25 @@ public class MatchV5ServiceImpl implements MatchV5Service {
 
         log.info("matchId = {}", matchIds);
 
-        for (String matchId : matchIds) {
-            String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + RIOT_API_KEY;
+        try {
+            Thread.sleep(1000); // 1초 딜레이
 
-            ResponseEntity<MatchDto> responseEntity = restTemplate.getForEntity(url, MatchDto.class);
-            result.add(responseEntity.getBody());
+            for (String matchId : matchIds) {
+                String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + RIOT_API_KEY;
 
-            log.info("url ==>> {}!!!", url);
-            log.info("reponseEntity ==>> {}!!!", responseEntity.getBody());
+                ResponseEntity<MatchDto> responseEntity = restTemplate.getForEntity(url, MatchDto.class);
+                result.add(responseEntity.getBody());
+
+
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            log.error("Thread interrupted while sleeping: {}", e.getMessage());
         }
+
+        log.info("result = {}", result);
+
+        //TODO 최적화 시키기 First
 
         //TODO 필요한 정보들 적어놓기
         //TODO 필요한 정보들 Dto만들어서 build
