@@ -44,7 +44,7 @@ public class SearchSummonerServiceImpl implements SearchSummonerService {
 
 		List<String> matchId = matchV5Service.getMatchId(responseEntity.getBody().getPuuid());
 
-		HashMap<String, MatchDto> matchDto = matchV5Service.getMatchInfo(matchId);
+		List<MatchDto> matchDto = matchV5Service.getMatchInfo(matchId);
 
 			return responseEntity.getBody();
 	}
