@@ -4,30 +4,136 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8"/>
-    <title>thymeleaf layout</title>
+    <title>Thymeleaf Layout with Bootstrap</title>
     <meta name="viewport"
           content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
     <!-- content script -->
     <th:block th:replace="~{fragments/config::configFragment}"></th:block>
     <script th:src="@{/js/main.js}"></script>
+
 </head>
-<!--	<th:block layout:fragment="css"></th:block>-->
-<!-- content script -->
-<!--	<th:block layout:fragment="script"></th:block>-->
+
 <body>
 
-<th:block layout:fragment="content">
+<!-- 전적 검색 컨테이너 -->
 
-    <!-- 2023.11.20 전적 검색 폼 시작 -->
-    <form id="main-search-form">
-        <input type="text" id="main-summoner-name" placeholder="소환사명 입력">
-        <input type="submit" value="검색">
+<!-- 2023.11.20 전적 검색 폼 시작 -->
+<div class="main-search-container">
+    Toy.GG
+    <form id="main-search-form" class="main-search-form">
+        <div class="main-dropdown-container">
+            <input type="button" class="main-summoner-nation" value="국가" id="main-nation-toggle">
+            <div class="main-dropdown-menu" id="main-nation-dropdown">
+                <!--  Korea   -->
+                <button type="button" class="main-dropdown-nation main-dropdown-nation-korea" value="대한민국">
+                    Korea
+                </button>
+                <!--  Japan   -->
+                <button type="button" class="main-dropdown-nation main-dropdown-nation-japan" value="일본">
+                    Japan
+                </button>
+            </div>
+        </div>
+        <input type="text" id="main-summoner-name" placeholder="소환사명 입력" class="main-summoner-name">
+        <input type="submit" value="검색" class="main-search-button">
     </form>
-    <!-- 2023.11.20 전적 검색 폼 끝 -->
+</div>
+<!-- 2023.11.20 전적 검색 폼 끝 -->
 
-</th:block>
+<!--2023.11.21 듀오 구하기 폼 시작 -->
+<div class="main-duo-find-container-0">
+    <div class="main-duo-find-container-1">
+        <div class="main-duo-find-container-2">
+            <div class="main-duo-find-container-3">
+
+                <i id="scroll-left-btn" class="fa-solid fa-chevron-left fa-2xl"></i>
+
+                <div class="main-duo-find-all-box" id="duoBoardContainer">
+
+                    <a href="#">듀오 구하기(더보기)</a>
+
+                    <div th:each="post : ${posts}" class="main-duo-find-a-box">
+
+                        <div class="main-duo-find-a-box-title-tag">
+                            <i id="main-duo-find-profile" class="fa-solid fa-user"></i>
+                            <h3 class="main-duo-find-title" th:text="${post.title}"/>
+                        </div>
+                        <div class="main-duo-find-a-box-title-tag1">
+                            <div id="main-duo-nickname-copy-box" class="main-duo-find-a-box-nickname-copy-box">
+                                <!-- 닉네임 출력 -->
+                                <p th:text="${post.nickName}" class="main-duo-board-nickname" id="nicknameToCopy"/>
+
+                                <!-- 복사 버튼에 해당 행의 닉네임 전달 -->
+                                <button th:attr="onclick='copyNicknameToClipboard(\'' + ${post.nickName} + '\')'" class="main-duo-find-copy-box">복사</button>
+
+                            </div>
+                            <div class="main-duo-find-rank-img">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+                            <p th:text="${post.rank}" class="main-duo-find-rank"/>
+
+                            <div class="main-duo-find-line-img">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+
+                            <i th:if="${post.microphoneSelected}" id="main-duo-board-mic" class="fa-solid fa-microphone main-duo-board-mic"></i>
+                            <i th:unless="${post.microphoneSelected}" class="fa-solid fa-microphone-slash main-duo-board-mic"></i>
+                            <p class="main-duo-find-registration-time">10초 전</p>
+
+                        </div>
+                        <p th:text="${post.content}" class="main-duo-board-content"/>
+
+                        <div class="main-duo-find-a-box-champion-img-big-box">
+
+                            <div class="main-duo-find-a-box-champion-img-box">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+
+                            <div class="main-duo-find-a-box-champion-img-box">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+
+                            <div class="main-duo-find-a-box-champion-img-box">
+                                <img src="/images/masteryi.png" class="main-duo-find-a-box-champion-img" alt=""/>
+                            </div>
+                        </div>
+                    <div class="main-line"></div>
+
+                        <div class="main-duo-find-side-menu">
+
+                            <div class="main-duo-find-like-box">
+                                <i class="fa-regular fa-heart fa-xl"></i>
+                            </div>
+
+                            <div class="main-duo-find-comment-box">
+                                <i class="fa-regular fa-comment fa-xl"></i>
+
+                            </div>
+
+                            <div class="main-duo-find-report-box">
+                                <i class="fa-regular fa-flag fa-xl"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--  main-duo-find-all-box end  -->
+                <i id="scroll-right-btn" class="fa-solid fa-chevron-right fa-2xl"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<!--2023.11.22 듀오 구하기 폼 끝 -->
 
 <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+
+
 
 </body>
 </html>

@@ -9,7 +9,8 @@
           content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
     <!-- content script -->
     <th:block th:replace="~{fragments/config::configFragment}"></th:block>
-    <link rel="stylesheet" th:href="@{/css/search-summoner/search-summoner.css}">
+
+
 </head>
 <!--	<th:block layout:fragment="css"></th:block>-->
 
@@ -35,7 +36,7 @@
                     <!-- 2023.11.21 소환사 프로필 왼쪽 컨테이너 시작 -->
                     <div class="search-profile-left-container">
                         <div class="search-profile-icon">
-<!--                            <img src="/images/search-summoner/profileIcon5489.png" alt="소환사 아이콘 사진">-->
+                            <!--                            <img src="/images/search-summoner/profileIcon5489.png" alt="소환사 아이콘 사진">-->
                             <img th:src="@{'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/' + ${summonerV4.getProfileIconId()} + '.png'}" alt="소환사 아이콘 사진">
 
                         </div>
@@ -136,15 +137,6 @@
     <div th:text="${'소환사 고유 식별번호 / summonerLevel : ' + summonerV4.getPuuid()}"></div>
     <div th:text="${'소환사 레벨 / summonerLevel : ' + summonerV4.getSummonerLevel()}"></div>
     <br>
-
-
-
-    <div th:text="${'leagueV4 첫 번째 / 티어 : ' + leagueV4.getTier() + ' ' +leagueV4.getRank() + ' ' + leagueV4.getLeaguePoints() + 'LP'}"></div>
-    <div th:text="${leagueV4.getWins() + '승'}"></div>
-    <div th:text="${leagueV4.getLosses() + '패'}"></div>
-    <div th:text="${'승률 : ' + (100.0 * leagueV4.getWins() / (leagueV4.getWins() + leagueV4.getLosses())) + '%'}"></div>
-
-
 </th:block>
 
 <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>

@@ -1,6 +1,7 @@
-package com.bee.beelab.searchSummoner.controller;
+package com.bee.beelab.searchSummoner.restAPI;
 
-import com.bee.beelab.searchSummoner.model.dto.SearchSummonerDTO;
+
+import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
 import com.bee.beelab.searchSummoner.service.SearchSummonerServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

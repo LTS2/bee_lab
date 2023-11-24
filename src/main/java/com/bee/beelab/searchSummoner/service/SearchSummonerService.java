@@ -1,7 +1,7 @@
 package com.bee.beelab.searchSummoner.service;
 
-import com.bee.beelab.searchSummoner.model.dto.SearchSummonerDTO;
-import com.bee.beelab.searchSummoner.model.dto.SearchSummonerRankedDTO;
+import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
+import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
 
 public interface SearchSummonerService {
 

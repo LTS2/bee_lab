@@ -1,0 +1,242 @@
+.search-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 87px;
+}
+
+.main-search-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#main-search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main-summoner-name {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 60vw;
+    height: 40px; /* 추가된 높이 속성 */
+}
+
+.main-search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4285f4;
+    color: #fff;
+    border: 1px solid #4285f4;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    height: 40px; /* 추가된 높이 속성 */
+}
+
+.main-summoner-nation {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4285f4;
+    color: #fff;
+    border: 1px solid #4285f4;
+    border-radius: 20px 0 0 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+}
+
+.main-search-button:hover {
+    background-color: #357ae8;
+    border-color: #357ae8;
+}
+.main-dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.main-dropdown-nation {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.main-dropdown-nation:hover {
+    background-color: #f1f1f1;
+}
+.main-duo-find-container-0{
+    display: flex;
+    align-content: center;
+    margin-top: 100px;
+}
+
+.main-duo-find-container-1{
+    width: 1100px;
+    height: 469px;
+    margin: 0 auto;
+}
+.main-duo-find-container-2{
+ /*border: 1px solid #000000;*/
+}
+.main-duo-find-container-3 {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 추가 */
+    align-items: center; /* 상하 중앙 정렬 추가 */
+}
+
+.main-duo-find-all-box .main-duo-find-a-box {
+    border: 1px solid blue;
+    width: 360px;
+    height: 354px;
+    flex-shrink: 0; /* 크기 조정에 영향을 주지 않도록 설정 */
+    transition: transform 0.5s ease; /* transform에 대한 애니메이션 효과 */
+}
+
+.main-duo-find-all-box{
+    width: 968px;
+    height: 372px;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.main-duo-find-a-box{
+    border: 1px solid rgb(91, 91, 91);
+    flex-direction: column;
+    width: 360px;
+    min-height: 354px;
+    border-radius: 10px;
+    background-color: #393A3C;
+    padding: 20px;
+}
+.main-duo-find-a-box + .main-duo-find-a-box {
+    margin-left: 15px;
+}
+
+#scroll-left-btn{
+    cursor: pointer;
+}
+#scroll-right-btn{
+    cursor: pointer;
+}
+
+.main-duo-find-a-box-title-tag{
+    display: flex;
+}
+
+.main-duo-find-a-box-title-tag1{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.main-duo-find-rank{
+    margin-left: 3px;
+    color: #f9f9f9;
+}
+
+.main-duo-find-rank-img{
+    margin-left: 10px;
+    min-width: 40px;
+    color: #f9f9f9;
+}
+
+.main-duo-board-nickname{
+    color: #f9f9f9;
+    min-width: 100px;
+}
+
+.main-duo-find-line-img{
+    margin-left: 10px;
+    min-width: 40px;
+    color: #f9f9f9;
+}
+
+.main-duo-board-mic{
+    margin-left: 10px;
+}
+
+.main-duo-find-title{
+    color: #f9f9f9;
+    margin-left: 10px;
+}
+
+.main-duo-find-a-box-champion-img-big-box{
+    height: 26px;
+    width: 100px;
+    display: flex;
+    margin-top: 75px;
+}
+
+.main-duo-find-a-box-champion-img-box{
+    height: 24px;
+    width: 30px;
+}
+
+.main-duo-find-a-box-champion-img-box + .main-duo-find-a-box-champion-img-box{
+ margin-left: 3px;
+}
+
+.main-duo-find-a-box-champion-img {
+    max-width: 100%; /* 최대 너비를 부모 요소에 맞게 조절 */
+    max-height: 100%; /* 최대 높이를 부모 요소에 맞게 조절 */
+}
+
+
+.main-duo-find-registration-time{
+    margin-left: 20px;
+    min-width: 70px;
+    color: #999999;
+}
+.main-duo-board-content{
+    margin-top: 25px;
+    height: 48px;
+    color: #999999;
+}
+.main-line{
+    width: calc(100% + 40px);
+    height: 1px;
+    margin-top: 16px;
+    margin-left: -20px;
+    background: rgba(91, 91, 91, 0.5);
+}
+
+.main-duo-find-copy-box{
+    cursor: pointer;
+    color: #999999;
+}
+
+.main-duo-find-side-menu{
+    margin-top: 15px;
+    display: flex;
+    min-height: 30px;
+}
+
+.main-duo-find-like-box{
+    cursor: pointer;
+}
+
+.main-duo-find-comment-box{
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.main-duo-find-report-box{
+    cursor: pointer;
+    margin-left: 235px;
+}
+
+
+
+
