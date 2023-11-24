@@ -16,22 +16,19 @@
 .search-profile-container {
 	border: 1px solid #000;
 	padding: 10px 10px 16px 0;
-	height: 228px;
 	min-width: 1080px;
 }
 
-.search-profile-wrap {
-	display: flex;
-	height: 100%;
-}
-
-/* 소환사 정보 메인 랩 */
+/* 소환사 정보 메인 랩 시작 */
 .search-profile-wrap {
 	display: flex;
 	gap: 30px;
+	border-bottom: 1px solid #000;
+	padding-bottom: 30px;
 }
+/* 소환사 정보 메인 랩 끝 */
 
-/* 소환사 정보 아이콘 컨테이너 */
+/* 소환사 정보 아이콘 컨테이너 시작 */
 .search-profile-left-container {
 	border: 1px solid blue;
 	display: flex;
@@ -45,8 +42,9 @@
 	width: 100px;
 	height: 100px;
 }
+/* 소환사 정보 아이콘 컨테이너 끝 */
 
-/* 소환사 정보 이름 컨테이너 */
+/* 소환사 정보 이름 컨테이너 시작 */
 .search-profile-right-container {
 	border: 1px solid #4029;
 	display: flex;
@@ -55,7 +53,26 @@
 	flex-grow: 1;
 }
 
-/* 소환사 전시즌 렙 */
+.search-info-record-middle-right-context {
+	display: flex;
+	flex-direction: column;
+	font-size: 15px;
+	padding-top: 4px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+.search-death-text {
+	color: #d31a45;
+}
+
+.search-info-record-middle-right-kda {
+	font-size: 12px;
+	color: #758592;
+}
+/* 소환사 정보 이름 컨테이너 끝 */
+
+/* 소환사 전시즌 렙 시작 */
 .search-profile-right-ranked-wrap {
 	font-size: 11px;
 }
@@ -64,8 +81,9 @@
 	display: flex;
 	gap: 5px;
 }
+/* 소환사 전시즌 렙 끝 */
 
-/* 소환사 전시즌 박스 */
+/* 소환사 전시즌 박스 시작 */
 .search-profile-ranked-box {
 	border: 1px solid;
 	/* background-color: #ebeef1; */
@@ -75,8 +93,9 @@
 	height: 18px;
 	border-radius: 2px;
 }
+/* 소환사 전시즌 박스 끝 */
 
-/* 전적 정보 컨테이너 */
+/* --- 전적 정보 컨테이너 시작 --- */
 .search-info-container {
 	border: 1px solid #000;
 	flex-grow: 1;
@@ -88,13 +107,15 @@
 	text-align: center;
 	gap: 10px;
 }
-/* 소환사 이름 텍스트 */
+
+/* 소환사 이름 텍스트 시작 */
 .search-profile-name-text {
 	padding-top: 5px;
 	font-size: 24px;
 }
+/* 소환사 이름 텍스트 끝 */
 
-/* 즐겨찾기 버튼 */
+/* 즐겨찾기 버튼 시작 */
 .search-profile-right-bookmark {
 	display: flex;
 	border: 1px solid #dbe0e4;
@@ -107,8 +128,9 @@
 	border-radius: 4px;
 	cursor: pointer;
 }
+/* 즐겨찾기 버튼 끝 */
 
-/* 전적 갱신 버튼 */
+/* 전적 갱신 버튼 시작 */
 .search-division {
 	border-radius: 4px;
 	background-color: #4171d6;
@@ -132,3 +154,337 @@
 	font-size: 12px;
 	color: #9aa4af;
 }
+/* 전적 갱신 버튼 끝 */
+
+/* 소환사 프로필 아래 카테고리 컨테이너 시작 */
+.search-profile-bottom-category {
+	display: flex;
+}
+
+.search-profile-bottom-category:last-child {
+	border: 1px solid #000;
+}
+
+.search-profile-category-text {
+	min-width: 60px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	padding: 0px 16px;
+}
+
+.search-profile-category-text button {
+	border: none;
+	background-color: #fff;
+	font-size: 14px;
+	width: 93px;
+	height: 36px;
+	cursor: pointer;
+}
+
+.search-category-total {
+	font-size: 14px;
+	/* border: none; */
+	color: rgb(65, 113, 214);
+	background-color: rgb(236, 242, 255) !important;
+	min-width: 60px;
+	height: 36px;
+	line-height: 36px;
+	padding: 0px 16px;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.search-profile-category-text-last {
+	display: flex;
+	align-items: center;
+}
+
+.search-category-tft {
+	color: #907659;
+}
+/* 소환사 프로필 아래 카테고리 컨테이너 끝 */
+
+/* 전적 정보 컨테이너 시작 */
+.search-info-wrap {
+	display: flex;
+	gap: 5px;
+}
+
+.search-info-left-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.search-info-solo-ranked-wrap {
+	border: 1px solid #000;
+	width: 332px;
+	height: 132px;
+}
+
+/* 솔로랭크 렙 시작 */
+.search-info-solo-ranked-top-wrap {
+	height: 35px;
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
+}
+
+/* 솔로랭크 렙 끝 */
+
+.search-info-solo-ranked-bottom-wrap {
+	border: 1px solid #000;
+	display: flex;
+	justify-content: space-around;
+	line-height: 25px;
+	align-items: center;
+	height: 97px;
+}
+
+.search-tier-image-wrap img {
+	width: 72px;
+	height: 72px;
+	border: 1px solid #fff;
+	border-radius: 100px;
+	background-color: #f7f7f9;
+}
+
+.search-tier-name p {
+	font-size: 20px;
+}
+
+.search-tier-lp p {
+	font-size: 12px;
+	color: #758592;
+}
+
+.search-tier-win-lose {
+	font-size: 12px;
+	color: #9aa4af;
+}
+
+.search-info-right-wrap {
+	border: 1px solid #000;
+}
+
+.search-info-right-top-box {
+	border: 1px solid #000;
+	width: 740px;
+	border-bottom: 1px solid #000;
+}
+
+.search-info-right-wrap {
+	display: flex;
+	flex-direction: column;
+}
+
+/* 그래프 크기 지정 CSS */
+.search-info-graph {
+	width: 120px;
+	height: 120px;
+}
+
+.search-info-right-bottom-wrap {
+	display: flex;
+}
+
+/* 2023.11.23 최근 전적 렙 시작 */
+.search-info-record-wrap {
+	background-color: #ecf2ff;
+	border: 1px solid #000;
+	height: 96px;
+}
+/* 2023.11.23 최근 전적 렙 끝 */
+
+.search-info-record-box {
+	display: flex;
+	justify-content: space-between;
+	width: 734px;
+	height: 96px;
+}
+
+.search-info-record-deco {
+	border: 1px solid #000;
+	width: 6px;
+	border-radius: 2px;
+}
+
+/* 2023.11.23 최근 전적 왼쪽 텍스트 박스 시작 */
+.search-info-record-left-wrap {
+	border: 1px solid red;
+}
+
+.search-info-record-left-box {
+	width: 108px;
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+	padding-top: 5px;
+	margin-bottom: 40px;
+	gap: 5px;
+}
+
+.seach-info-record-left-text-second-wrap {
+	line-height: 14px;
+}
+
+.search-info-record-left-text1 {
+	color: #4171d6;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.search-info-record-left-text3 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #758592;
+}
+
+.search-info-record-left-text {
+	font-size: 12px;
+	color: #758592;
+}
+
+/* 2023.11.23 최근 전적 왼쪽 텍스트 박스 끝 */
+
+/* 2023.11.23 최근 전적 오른쪽 박스 시작 */
+.search-info-record-middle-wrap {
+	border: 1px solid #000;
+	width: 378px;
+}
+/* 2023.11.23 최근 전적 오른쪽 박스 끝 */
+
+/* 2023.11.23 최근 전적 중앙 박스 시작 */
+.search-info-record-right-wrap {
+	border: 1px solid #000;
+	width: 168px;
+}
+
+.search-info-record-middle-top-box {
+	margin-top: 8px;
+	display: flex;
+	gap: 10px;
+	height: 58px;
+}
+
+/* 2023.11.24 전적 챔피언 사진 시작 */
+.search-info-record-middle-left-context-champion-image {
+	width: 48px;
+	height: 48px;
+	border-radius: 100px;
+}
+/* 2023.11.24 전적 챔피언 사진 끝 */
+
+.search-champion-level {
+	position: relative;
+	left: 29px;
+	bottom: 23px;
+	display: flex;
+	width: 20px;
+	height: 20px;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 14px;
+	color: rgb(255, 255, 255);
+	background: rgb(32, 45, 55);
+	border-radius: 50%;
+}
+
+.search-info-record-middle-left-mastery-box {
+	/* border: 1px solid #000; */
+	display: flex;
+	flex-direction: column;
+}
+
+.search-mastery-wrap {
+	gap: 3px;
+}
+
+/* 2023.11.24 스펠 이미지 칸 시작 */
+.search-spell img {
+	width: 22px;
+	height: 22px;
+}
+
+.search-mastery-box {
+	background-color: black;
+	border-radius: 100px;
+	display: flex;
+	justify-content: center;
+}
+/* 2023.11.24 스펠 이미지 칸 끝 */
+/* 2023.11.23 최근 전적 중앙 박스 끝 */
+
+.search-info-record-left-line {
+	border-bottom: 1px solid #d5e3ff;
+	width: 47px;
+	margin-top: 5px;
+	margin-bottom: 14px;
+}
+
+.search-info-record-middle-bottom-box {
+	border: 1px solid #000;
+	display: flex;
+	gap: 3px;
+}
+
+.search-item {
+	border: 1px solid #000;
+	background-color: #b3cdff;
+	min-width: 22px;
+	height: 22px;
+	border-radius: 3px;
+}
+
+.search-item-last img {
+	border-radius: 12px;
+	width: 100%;
+	height: 100%;
+}
+
+.search-item img,
+.search-item-last img,
+.search-item {
+	min-width: 22px;
+	height: 22px;
+}
+
+.search-more-info-box {
+	display: flex;
+	flex-direction: column;
+	color: #758592;
+	font-size: 11px;
+	line-height: 13px;
+}
+
+.search-text1 {
+	font-size: 12px;
+	color: #d31a45;
+}
+
+.search-info-record-right-box {
+	display: flex;
+	gap: 20px;
+}
+
+.search-left-blue-team {
+	max-width: 80px;
+	min-height: 16px;
+	font-size: 12px;
+}
+
+.search-left-blue-team img {
+	max-width: 16px;
+	max-height: 16px;
+}
+/* --- 전적 정보 컨테이너 끝 --- */
