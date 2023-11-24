@@ -75,12 +75,6 @@ public class MatchV5ServiceImpl implements MatchV5Service {
 
         }
 
-        //TODO 최적화 시키기 First
-
-        //TODO 필요한 정보들 적어놓기
-        //TODO 필요한 정보들 Dto만들어서 build
-        //TODO build한 정보들 화면에 뿌려주기
-
         return  result;
     }
 }
