@@ -69,7 +69,7 @@ public class MatchV5ServiceImpl implements MatchV5Service {
 
         for (String matchId : matchIds) {
             String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + RIOT_API_KEY;
-
+            //ㅋㅋ
             ResponseEntity<MatchDto> responseEntity = restTemplate.getForEntity(url, MatchDto.class);
             result.add(responseEntity.getBody());
 
