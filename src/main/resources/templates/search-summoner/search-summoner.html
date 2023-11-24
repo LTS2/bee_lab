@@ -9,7 +9,8 @@
           content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
     <!-- content script -->
     <th:block th:replace="~{fragments/config::configFragment}"></th:block>
-
+    <link rel="stylesheet" th:href="@{/css/search-summoner/search-summoner.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <!--	<th:block layout:fragment="css"></th:block>-->
@@ -31,27 +32,22 @@
         <div class="search-middle-container">
             <!-- 2023.11.21 유저 프로필 컨테이너 시작 -->
             <div class="search-profile-container">
-
                 <div class="search-profile-wrap">
                     <!-- 2023.11.21 소환사 프로필 왼쪽 컨테이너 시작 -->
                     <div class="search-profile-left-container">
                         <div class="search-profile-icon">
-                            <!--                            <img src="/images/search-summoner/profileIcon5489.png" alt="소환사 아이콘 사진">-->
-                            <img th:src="@{'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/' + ${summonerV4.getProfileIconId()} + '.png'}" alt="소환사 아이콘 사진">
-
+                            <img src="/images/search-summoner/profileIcon5489.png" alt="소환사 아이콘 사진">
                         </div>
-                        <!-- 2023.11.22 소환사 레벨 시작-->
                         <div class="search-profile-level">
-                            <p th:text="${'레벨: ' + summonerV4.getSummonerLevel()}" class="search-profile-level-text"></p>
+                            <p class="search-profile-level-text">
+                                소환사 레벨 : 242
+                            </p>
                         </div>
-                        <!-- 2023.11.22 소환사 레벨 끝 -->
-
                     </div>
                     <!-- 2023.11.21 소환사 프로필 왼쪽 컨테이너 끝 -->
 
                     <!-- 2023.11.21 소환사 프로필 오른쪽 컨테이너 시작 -->
                     <div class="search-profile-right-container">
-
                         <!-- 2023.11.21 소환사 전시즌 정보칸 시작-->
                         <div class="search-profile-right-ranked-wrap">
                             <div class="search-profile-right-ranked">
@@ -71,7 +67,9 @@
                         <!-- 2023.11.22 소환사 이름 시작 -->
                         <div class="search-profile-right-name-wrap">
                             <div class="search-profile-right-name-box">
-                                <p th:text="${summonerV4.getName()}"class="search-profile-name-text"></p>
+                                <p class="search-profile-name-text">
+                                    이주멍
+                                </p>
                             </div>
                             <button class="search-profile-right-bookmark">
                                 <img src="/images/search-summoner/icon-bookmark.svg" alt="">
@@ -109,16 +107,435 @@
                         </div>
                         <!-- 2023.11.22 최근 업데이트 버튼 끝 -->
 
-
                     </div>
                     <!-- 2023.11.21 소환사 프로필 오른쪽 컨테이너 끝 -->
                 </div>
+                <!-- 2023.11.21 소환사 프로필 아래 카테고리 컨테이너 시작 -->
+                <div class="search-profile-bottom-category-container">
+                    <div class="search-profile-bottom-category-wrap">
+                        <div class="search-profile-bottom-category">
+                            <div class="search-profile-category-text">
+                                <button class="search-category-total search-category-btn">종합</button>
+                            </div>
+                            <div class="search-profile-category-text">
+                                <button class="search-category-champion search-category-btn">챔피언</button>
+                            </div>
+                            <div class="search-profile-category-text">
+                                <button class="search-category-ingame-info search-category-btn">인게임 정보</button>
+                            </div>
+                            <div class="search-profile-category-text search-profile-category-text-last">
+                                <img src="/images/search-summoner/icon-tft.svg" alt="TFT 전략적 팀 전투">
+                                <button class="search-category-tft search-category-btn">전략적 팀 전투</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2023.11.21 소환사 프로필 아래 카테고리 컨테이너 끝 -->
 
             </div>
             <!-- 2023.11.21 전적 검색 컨테이너 끝 -->
 
             <!-- 2023.11.21 전적 정보 컨테이너 시작 -->
             <div class="search-info-container">
+                <div class="search-info-wrap">
+                    <!-- 2023.11.22 전적검색 왼쪽 렙 시작 -->
+                    <div class="search-info-left-wrap">
+                        <div class="search-info-solo-ranked-wrap">
+                            <div class="search-info-solo-ranked-top-wrap">
+                                <span>솔로랭크</span>
+                            </div>
+                            <div class="search-info-solo-ranked-bottom-wrap">
+                                <div class="search-tier-image-wrap">
+                                    <img src="/images/search-summoner/diamond.png" alt="티어 사진">
+                                </div>
+                                <div class="search-tier-name">
+                                    <p>Diamond 1</p>
+                                    <div class="search-tier-lp">
+                                        <p>44 LP</p>
+                                    </div>
+                                </div>
+                                <div class="search-tier-win-lose">
+                                    26승 11패
+                                    <div class="search-tier-win-rate">
+                                        승률 70%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2023.11.21 자유랭크 컨테이너 시작 -->
+                        <div class="search-info-solo-ranked-wrap">
+                            <div class="search-info-solo-ranked-top-wrap">
+                                <span>자유랭크</span>
+                            </div>
+                            <div class="search-info-solo-ranked-bottom-wrap">
+                                <div class="search-tier-image-wrap">
+                                    <img src="/images/search-summoner/diamond.png" alt="티어 사진">
+                                </div>
+                                <div class="search-tier-name">
+                                    <p>Diamond 1</p>
+                                    <div class="search-tier-lp">
+                                        <p>44 LP</p>
+                                    </div>
+                                </div>
+                                <div class="search-tier-win-lose">
+                                    26승 11패
+                                    <div class="search-tier-win-rate">
+                                        승률 70%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 2023.11.21 자유랭크 컨테이너 끝 -->
+                    </div>
+                    <!-- 2023.11.22 전적검색 왼쪽 렙 끝 -->
+
+                    <div class="search-info-right-wrap">
+                        <div class="search-info-right-top-box">
+                            전체 솔로랭크
+                        </div>
+
+                        <div class="search-info-right-bottom-wrap">
+                            <div class="search-info-right-bottom-box">
+                                20전 11승 9패
+                                <!-- 2023.11.22 최근 20판 그래프 시작 -->
+                                <div class="search-info-graph">
+                                    <canvas id="myChart"></canvas>
+                                    <script>
+                                        // 그래프 데이터
+                                        const data = {
+                                            // labels: ["승리", "패배"],
+                                            datasets: [{
+                                                label: '전적',
+                                                data: [11, 9],
+                                                backgroundColor: [
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                ],
+                                                borderColor: [
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 99, 132, 1)',
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        };
+
+                                        // 그래프 옵션
+                                        const options = {
+                                            plugins: {
+                                                legend: {
+                                                    position: 'bottom',
+                                                },
+                                                title: {
+                                                    display: true,
+                                                    text: '최근 20판 승률',
+                                                }
+                                            }
+                                        };
+
+                                        const ctx = document.getElementById('myChart').getContext('2d');
+                                        const myChart = new Chart(ctx, {
+                                            type: 'doughnut', // 원형 차트 설정
+                                            data: data,
+                                            options: options
+                                        });
+                                    </script>
+                                </div>
+                                <!-- 2023.11.22 최근 20판 그래프 끝 -->
+                            </div>
+                        </div>
+                        <!-- 2023.11.23 최근 전적 렙 시작 -->
+                        <div class="search-info-record-wrap">
+                            <div class="search-info-record-box">
+                                <div class="search-info-record-deco">
+
+                                </div>
+
+                                <!-- 2023.11.23 최근 전적 왼쪽 텍스트 박스 시작 -->
+                                <div class="search-info-record-left-wrap">
+                                    <div class="search-info-record-left-box">
+                                        <p class="search-info-record-left-text1">
+                                            빠른 대전
+                                        </p>
+                                        <p class="search-info-record-left-text">
+                                            7일 전
+                                        </p>
+
+                                        <!-- 2023.11.23 최근 전적 왼쪽 텍스트 박스쪽 구분 선 전용 클래스 시작 -->
+                                        <div class="search-info-record-left-line"></div>
+                                        <!-- 2023.11.23 최근 전적 왼쪽 텍스트 박스쪽 구분 선 전용 클래스 끝 -->
+
+                                        <div class="seach-info-record-left-text-second-wrap">
+                                            <p class="search-info-record-left-text3">
+                                                승리
+                                            </p>
+                                            <p class="search-info-record-left-text">
+                                                17분 8초
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2023.11.23 최근 전적 왼쪽 텍스트 박스 끝 -->
+
+                                <!-- 2023.11.23 최근 전적 중앙 박스 시작 -->
+                                <div class="search-info-record-middle-wrap">
+                                    <div class="search-info-record-middle-top-box">
+                                        <div class="search-info-record-middle-left-context">
+                                            <a href="#">
+                                                <!-- 2023.11.24 전적 챔피언 사진 시작 -->
+                                                <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/LeeSin.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                     alt=""
+                                                     class="search-info-record-middle-left-context-champion-image">
+                                                <!-- 2023.11.24 전적 챔피언 사진 끝 -->
+                                            </a>
+                                            <span class="search-champion-level">10</span>
+                                        </div>
+                                        <!-- 2023.11.24 스펠 이미지 칸 시작 -->
+                                        <div class="search-info-record-middle-left-mastery-box">
+                                            <div class="search-spell">
+                                                <img src="https://opgg-static.akamaized.net/meta/images/lol/spell/SummonerSmite.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                     alt="">
+                                            </div>
+                                            <div class="search-spell">
+                                                <img src="https://opgg-static.akamaized.net/meta/images/lol/spell/SummonerFlash.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                     alt="">
+                                            </div>
+                                        </div>
+                                        <!-- 2023.11.24 스펠 이미지 칸 끝 -->
+
+                                        <!-- 2023.11.24 특성 이미지 칸 시작 -->
+                                        <div class="search-info-record-middle-left-mastery-box search-mastery-wrap">
+                                            <div class="search-spell search-mastery-box">
+                                                <img src="https://opgg-static.akamaized.net/meta/images/lol/perk/8010.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                     alt="">
+                                            </div>
+
+                                            <div class="search-spell">
+                                                <img src="https://opgg-static.akamaized.net/meta/images/lol/perkStyle/8300.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                     alt="">
+                                            </div>
+                                        </div>
+                                        <!-- 2023.11.24 특성 이미지 칸 끝 -->
+
+                                        <div class="search-info-record-middle-right-context">
+                                            <div class="search-kda">
+                                                <span>6</span> /
+                                                <span class="search-death-text">3</span> /
+                                                <span>3</span>
+                                            </div>
+                                            <div class="search-info-record-middle-right-kda">
+                                                3.00:1 평점
+                                            </div>
+                                        </div>
+
+                                        <div class="search-more-info-wrap">
+                                            <div class="search-more-info-box">
+                                                <span class="search-text1">
+                                                    킬관여 41%
+                                                </span>
+                                                <span class="search-text2">
+                                                    제어 와드 5
+                                                </span>
+                                                <span class="search-text3">
+                                                    CS 102(6)
+                                                </span>
+                                                <!-- 2023.11.24 매칭 평균 티어 시작-->
+                                                <span class="search-text4">
+                                                    Platinum 1
+                                                </span>
+                                                <!-- 2023.11.24 매칭 평균 티어 끝-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 2023.11.24 아이템 칸 시작 -->
+                                    <div class="search-info-record-middle-bottom-box">
+                                        <div class="search-item">
+                                            <img src="https://opgg-static.akamaized.net/meta/images/lol/item/3133.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                 alt="">
+                                        </div>
+
+                                        <div class="search-item">
+                                            <img src="https://opgg-static.akamaized.net/meta/images/lol/item/3133.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                 alt="">
+                                        </div>
+
+                                        <div class="search-item">
+                                            <img src="https://opgg-static.akamaized.net/meta/images/lol/item/3133.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                 alt="">
+                                        </div>
+
+                                        <div class="search-item">
+                                            <img src="https://opgg-static.akamaized.net/meta/images/lol/item/3133.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                 alt="">
+                                        </div>
+
+                                        <div class="search-item">
+                                            <img src="https://opgg-static.akamaized.net/meta/images/lol/item/3133.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                 alt="">
+                                        </div>
+
+                                        <div class="search-item">
+                                            <img src="https://opgg-static.akamaized.net/meta/images/lol/item/3133.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                 alt="">
+                                        </div>
+
+                                        <div class="search-item-last">
+                                            <img src="https://opgg-static.akamaized.net/meta/images/lol/item/3363.png?image=q_auto,f_webp,w_64,h_64&v=1700641403304"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    <!-- 2023.11.24 아이템 칸 끝 -->
+
+                                </div>
+                                <!-- 2023.11.23 최근 전적 중앙 박스 끝 -->
+
+                                <!-- 2023.11.23 최근 전적 오른쪽 박스 시작 -->
+                                <div class="search-info-record-right-wrap">
+                                    <div class="search-info-record-right-box">
+
+                                        <div class="search-left-summoners">
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="search-right-summoners">
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="search-left-blue-team-box">
+                                                <div class="search-left-blue-team">
+                                                    <img src="https://opgg-static.akamaized.net/meta/images/lol/champion/Graves.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1700641403304"
+                                                         alt="">
+                                                    <span class="search-left-blue-team-name">
+                                                        건들면뒤...
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2023.11.23 최근 전적 오른쪽 박스 끝 -->
+
+
+
+
+                                <!-- 2023.11.23 최근 전적 오른쪽 더보기 버튼 시작 -->
+                                <button class="search-info-record-more-info">
+                                    <span style="color: rgb(83, 131, 232); width: 24px; height: 24px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="currentColor">
+                                            <g fill="currentColor" fill-rule="evenodd">
+                                                <g fill="currentColor" fill-rule="nonzero">
+                                                    <g fill="currentColor">
+                                                        <path d="M12 13.2L16.5 9 18 10.4 12 16 6 10.4 7.5 9z"
+                                                              transform="translate(-64 -228) translate(64 228)"
+                                                              fill="currentColor">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <!-- 2023.11.23 최근 전적 오른쪽 더보기 버튼 끝 -->
+                            </div>
+                        </div>
+                        <!-- 2023.11.23 최근 전적 렙 끝 -->
+
+                        여기에 전적 복붙해야함.
+
+                    </div>
+                </div>
+
+
 
             </div>
             <!-- 2023.11.21 전적 정보 컨테이너 끝 -->
