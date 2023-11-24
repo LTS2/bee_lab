@@ -76,6 +76,7 @@
 .main-duo-find-container-0{
     display: flex;
     align-content: center;
+    margin-top: 100px;
 }
 
 .main-duo-find-container-1{
@@ -137,6 +138,7 @@
 .main-duo-find-a-box-title-tag1{
     display: flex;
     margin-top: 10px;
+    align-items: center;
 }
 
 .main-duo-find-rank{
@@ -146,17 +148,18 @@
 
 .main-duo-find-rank-img{
     margin-left: 10px;
-    width: 15px;
+    min-width: 40px;
     color: #f9f9f9;
 }
 
 .main-duo-board-nickname{
     color: #f9f9f9;
+    min-width: 100px;
 }
 
 .main-duo-find-line-img{
     margin-left: 10px;
-    width: 15px;
+    min-width: 40px;
     color: #f9f9f9;
 }
 
@@ -192,7 +195,8 @@
 
 
 .main-duo-find-registration-time{
-    margin-left: 100px;
+    margin-left: 20px;
+    min-width: 70px;
     color: #999999;
 }
 .main-duo-board-content{
@@ -207,6 +211,32 @@
     margin-left: -20px;
     background: rgba(91, 91, 91, 0.5);
 }
+
+.main-duo-find-copy-box{
+    cursor: pointer;
+    color: #999999;
+}
+
+.main-duo-find-side-menu{
+    margin-top: 15px;
+    display: flex;
+    min-height: 30px;
+}
+
+.main-duo-find-like-box{
+    cursor: pointer;
+}
+
+.main-duo-find-comment-box{
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.main-duo-find-report-box{
+    cursor: pointer;
+    margin-left: 235px;
+}
+
 
 
 

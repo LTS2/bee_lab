@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+.build-container{
+    /*background-color: bisque;*/
+    width: 100%;
+    margin-top: 100px;
+}
+.build-mini-container{
+    max-width: 1080px;
+    margin: auto;
+}
+.build-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.build-title > div {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.build-image {
+    width: 150px;
+    height: 150px;
+    margin-left: 10px; /* 이미지와 제목 사이 여백 조절 */
+}
+
+/* hr 스타일 */
+hr[role="tournament3"] {
+    border: 0px solid;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(172, 131, 83, 0.75), rgba(0, 0, 0, 0));
+    margin: 32px 0px;
+    display: block;
+}
+hr[role="tournament3"]::before {
+    position: absolute;
+    background-color: #efefef;
+    border: 10px solid #AC8353;
+    border-top: 10px solid transparent;
+    border-radius: 2px;
+    padding: 0px;
+    transform: rotate(180deg);
+    left: 50%;
+    margin: -5px 0px 0px -21px;
+    content: "";
+}
+.flex-container{
+    /*display: flex;*/
+}
+.build-option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 16px;
+}
+
+.build-option-right {
+    display: flex;
+    align-items: center;
+}
+
+.build-search-select {
+    position: relative;
+    margin-right: 10px;
+}
+
+/* selectBox 스타일링 */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    width: 150px; /* 선택하면 화살표가 변하므로 너비 설정 */
+}
+
+/* 화살표 아이콘 스타일링 */
+.build-search-select::after {
+    content: '\25BC'; /* 화살표 아이콘 (유니코드) */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+form {
+    margin: 0;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.build-option-left {
+    background-color: rgba(172, 131, 83, 0.33);
+    display: flex;
+    border-radius: 10px;
+    gap: 15px;
+    padding: 10px; /* 내부 요소와 배경 간격을 조절 */
+}
+
+.build-button{
+    padding: 10px 15px;
+    font-size: 16px;
+    /*border: 1px solid #ccc;*/
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none; /* 버튼 클릭 시 파란 테두리 제거 */
+}
+
+/* 버튼에 호버 효과 추가 */
+.build-button:hover {
+    background-color: #f0f0f0;
+}
+/* 여백 div */
+.space{
+    height: 70px;
+}
+/* 테이블 스타일 */
+.content-list {
+    /*width: 80%; !* 테이블 너비를 조절할 수 있습니다. *!*/
+    margin: auto; /* 가운데 정렬을 위해 사용 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* 테이블 위 여백을 설정 */
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color : white;
+}
+
+/* 글쓰기 영역 */
+.write-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.write {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 20px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    background-color: #5383e8;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.write:hover {
+    background-color: #4566b8;
+}
+
+.write > div {
+    margin-right: 10px;
+}
+
+.write-button {
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.write i {
+    margin-right: 5px;
+}
