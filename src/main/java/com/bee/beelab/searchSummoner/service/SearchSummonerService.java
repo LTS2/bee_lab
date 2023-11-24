@@ -1,5 +1,6 @@
 package com.bee.beelab.searchSummoner.service;
 
+import com.bee.beelab.searchSummoner.model.dto.SummonerAndMatchInfoDTO;
 import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
 import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
 
@@ -11,7 +12,7 @@ public interface SearchSummonerService {
 	 * @since       : 11/19/23
 	 * @apiNote     : 유저 이름으로 검색하는 1차 API
 	 */
-	SearchSummonerDTO searchSummoner(String summonerName);
+	SummonerAndMatchInfoDTO searchSummoner(String summonerName);
 
 	/**
 	 * @fileName    : SearchSummonerService.java

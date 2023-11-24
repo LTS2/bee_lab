@@ -1,6 +1,8 @@
 package com.bee.beelab.searchSummoner.controller;
 
 
+import com.bee.beelab.searchSummoner.model.dto.SummonerAndMatchInfoDTO;
+import com.bee.beelab.searchSummoner.service.SearchSummonerService;
 import com.bee.beelab.test.controller.TestController;
 import com.bee.beelab.test.entity.Post;
 
@@ -23,16 +25,16 @@ import java.util.List;
 @Controller
 public class SearchSummonerController {
 
-	private final SearchSummonerServiceImpl searchSummonerServiceimpl;
+	private final SearchSummonerService searchSummonerService;
 
 	/**
 	 * Instantiates a new Search summoner controller.
 	 *
-	 * @param searchSummonerServiceimpl the api serviceimpl
+	 * @param searchSummonerService the api service
 	 */
 	@Autowired
-	public SearchSummonerController(SearchSummonerServiceImpl searchSummonerServiceimpl) {
-		this.searchSummonerServiceimpl = searchSummonerServiceimpl;
+	public SearchSummonerController(SearchSummonerService searchSummonerService) {
+		this.searchSummonerService = searchSummonerService;
 	}
 
 
@@ -64,12 +66,19 @@ public class SearchSummonerController {
 	public String searchSummoner(Model model, @PathVariable String summonerName){
 		log.info(">>>>> SearchSummonerController.searchSummoner.executed()");
 
-		SearchSummonerDTO summonerV4 = searchSummonerServiceimpl.searchSummoner(summonerName);
-		SearchSummonerRankedDTO leagueV4 = searchSummonerServiceimpl.searchSummonerRanked(summonerV4.getId());
+		SummonerAndMatchInfoDTO summonerV4 = searchSummonerService.searchSummoner(summonerName);
+		SearchSummonerRankedDTO leagueV4 = searchSummonerService.searchSummonerRanked(summonerV4.getSummonerDTO().getId());
 
 
-		model.addAttribute("summonerV4",  summonerV4);
+		model.addAttribute("summonerV4",  summonerV4.getSummonerDTO());
+		model.addAttribute("matchV5",  summonerV4.getMatchDtoList());
 		model.addAttribute("leagueV4",  leagueV4);
+
+		return "search-summoner/search-summoner";
+	}
+
+	public String searchSummoner1(Model model, @PathVariable String summonerName){
+
 
 		return "search-summoner/search-summoner";
 	}

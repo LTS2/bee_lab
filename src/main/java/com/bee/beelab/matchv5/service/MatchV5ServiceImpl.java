@@ -34,7 +34,7 @@ public class MatchV5ServiceImpl implements MatchV5Service {
      */
     @Override
     public List<String> getMatchId(String puuid) {
-        String url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid +"/ids?type=ranked&start=0&count=20&api_key=" +
+        String url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid +"/ids?start=0&count=1&api_key=" +
                 RIOT_API_KEY;
 
         ResponseEntity<List<String>> responseEntity = restTemplate.exchange(
@@ -59,13 +59,13 @@ public class MatchV5ServiceImpl implements MatchV5Service {
 
         log.info("matchId = {}", matchIds);
 
-        try {
-            Thread.sleep(1000); // 1초 딜레이
-
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            log.error("Thread interrupted while sleeping: {}", e.getMessage());
-        }
+//        try {
+//            Thread.sleep(1000); // 1초 딜레이
+//
+//        } catch (InterruptedException e) {
+//            Thread.currentThread().interrupt();
+//            log.error("Thread interrupted while sleeping: {}", e.getMessage());
+//        }
 
         for (String matchId : matchIds) {
             String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + RIOT_API_KEY;

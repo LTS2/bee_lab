@@ -3,6 +3,7 @@ package com.bee.beelab.searchSummoner.service;
 import com.bee.beelab.matchv5.controller.MatchV5Controller;
 import com.bee.beelab.matchv5.model.dto.MatchDto;
 import com.bee.beelab.matchv5.service.MatchV5Service;
+import com.bee.beelab.searchSummoner.model.dto.SummonerAndMatchInfoDTO;
 import com.bee.beelab.searchSummoner.model.entity.SearchSummonerDTO;
 import com.bee.beelab.searchSummoner.model.entity.SearchSummonerRankedDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +35,11 @@ public class SearchSummonerServiceImpl implements SearchSummonerService {
 	/**
 	 * 소환사 검색 기능 */
 	@Override
-	public SearchSummonerDTO searchSummoner(String summonerName) {
+	public SummonerAndMatchInfoDTO searchSummoner(String summonerName) {
+
 		String url = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + summonerName + "?api_key=" + RIOT_API_KEY;
 
-
+		//	Summoner 기본정보
 		ResponseEntity<SearchSummonerDTO> responseEntity = restTemplate.getForEntity(url, SearchSummonerDTO.class);
 
 		String puuid = responseEntity.getBody().getPuuid();
@@ -46,7 +48,13 @@ public class SearchSummonerServiceImpl implements SearchSummonerService {
 
 		List<MatchDto> matchDto = matchV5Service.getMatchInfo(matchId);
 
-			return responseEntity.getBody();
+		SummonerAndMatchInfoDTO summonerAndMatchInfoDTO = SummonerAndMatchInfoDTO.builder()
+				.matchDtoList(matchDto)
+				.summonerDTO(responseEntity.getBody())
+				.build();
+
+
+		return summonerAndMatchInfoDTO;
 	}
 
 	/**

@@ -23,11 +23,11 @@ public class SearchSummonerRestController {
 		this.searchSummonerServiceImpl = searchSummonerServiceImpl;
 	}
 
-	@GetMapping("/{summonerName}")
-	public ResponseEntity<SearchSummonerDTO> getSummonerInfo(@PathVariable("summonerName") String summonerName){
-	    log.info(">>>>> SearchSummonerRestController.getSummonerInfo.executed()");
-
-		SearchSummonerDTO summonerInfo = searchSummonerServiceImpl.searchSummoner(summonerName);
-	    return ResponseEntity.ok(summonerInfo);
-	}
+//	@GetMapping("/{summonerName}")
+//	public ResponseEntity<SearchSummonerDTO> getSummonerInfo(@PathVariable("summonerName") String summonerName){
+//	    log.info(">>>>> SearchSummonerRestController.getSummonerInfo.executed()");
+//
+//		SearchSummonerDTO summonerInfo = searchSummonerServiceImpl.searchSummoner(summonerName);
+//	    return ResponseEntity.ok(summonerInfo);
+//	}
 }
