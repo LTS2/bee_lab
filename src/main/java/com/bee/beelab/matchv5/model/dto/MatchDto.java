@@ -16,6 +16,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class MatchDto {
 
-    private MetadataDto metadataDto;
-    private InfoDto infoDto;
+    private MetadataDto metadata;
+    private InfoDto info;
 }

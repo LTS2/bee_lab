@@ -15,5 +15,5 @@ public interface MatchV5Service {
 
     List<String> getMatchId(String puuid);
 
-    HashMap<String, MatchDto> getMatchInfo(List<String> matchId);
+    List<MatchDto> getMatchInfo(List<String> matchId);
 }
