@@ -1,4 +1,4 @@
-package com.bee.beelab.buildLab.service;
+package com.bee.beelab.build.service;
 
 /**
  * Please explain the class!!
