@@ -61,20 +61,18 @@ public class MatchV5ServiceImpl implements MatchV5Service {
         try {
             Thread.sleep(1000); // 1초 딜레이
 
-            for (String matchId : matchIds) {
-                String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + RIOT_API_KEY;
-
-                ResponseEntity<MatchDto> responseEntity = restTemplate.getForEntity(url, MatchDto.class);
-                result.add(responseEntity.getBody());
-
-
-            }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             log.error("Thread interrupted while sleeping: {}", e.getMessage());
         }
 
-        log.info("result = {}", result);
+        for (String matchId : matchIds) {
+            String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + RIOT_API_KEY;
+
+            ResponseEntity<MatchDto> responseEntity = restTemplate.getForEntity(url, MatchDto.class);
+            result.add(responseEntity.getBody());
+
+        }
 
         //TODO 최적화 시키기 First
 
