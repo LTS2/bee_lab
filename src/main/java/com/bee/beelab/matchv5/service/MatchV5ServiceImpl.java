@@ -34,7 +34,7 @@ public class MatchV5ServiceImpl implements MatchV5Service {
      */
     @Override
     public List<String> getMatchId(String puuid) {
-        String url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid +"/ids?type=ranked&start=3&count=20&api_key=" +
+        String url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid +"/ids?type=ranked&start=0&count=20&api_key=" +
                 RIOT_API_KEY;
 
         ResponseEntity<List<String>> responseEntity = restTemplate.exchange(
@@ -44,6 +44,7 @@ public class MatchV5ServiceImpl implements MatchV5Service {
                 new ParameterizedTypeReference<List<String>>() {}
         );
 
+        System.out.println(responseEntity.getBody());
         return responseEntity.getBody();
     }
     /**

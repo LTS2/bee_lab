@@ -1,0 +1,83 @@
+#txtContent{
+    width: 1080px;
+    /*margin: auto;*/
+}
+.build-container{
+    width: 100%;
+    margin-top: 100px;
+    /*border: 1px solid black;*/
+}
+.build-mini-container{
+    max-width: 1085px;
+    margin: auto;
+    /*border: 1px solid red;*/
+}
+.space{
+    height: 25px;
+}
+.build-name{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* 정보 컨테이너 영역 */
+.info-area {
+    display: flex;
+    /*padding: 8px;*/
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+li {
+    margin-right: 5px;
+}
+li > span{
+    color: #636363;
+}
+
+.divider {
+    margin: 0 5px;
+}
+
+
+.build-title {
+    margin-bottom: 20px;
+}
+
+.build-title input {
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    /*border: none;*/
+    border: 2px solid #5383e8;
+    border-radius: 10px;
+    outline: none;
+    background-color: transparent;
+}
+
+/* 버튼 영역 */
+.button-area {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.go-back button,
+.send-btn button {
+    padding: 10px 20px;
+    background-color: #5383e8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.go-back button:hover,
+.send-btn button:hover {
+    background-color: #446db6; /* 호버 시 배경 색상 변경 */
+}
