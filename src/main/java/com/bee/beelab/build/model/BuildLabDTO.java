@@ -1,4 +1,4 @@
-package com.bee.beelab.buildLab.model;
+package com.bee.beelab.build.model;
 
 /**
  * 빌드연구소 DTO
