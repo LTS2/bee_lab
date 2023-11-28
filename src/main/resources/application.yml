@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+
+# MySQL 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bee?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+
+  # Thymeleaf 설정
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:templates/ # ??? ???? ?? ??? ?. ???
+    check-template-location: true
+    suffix: .html
+    mode: HTML
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true
+
+riot:
+  api_key: z
+
+
